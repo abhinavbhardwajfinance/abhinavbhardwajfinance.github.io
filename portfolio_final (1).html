@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Abhinav Bhardwaj | Finance Professional & CS Executive</title>
+<meta name="description" content="Fully dynamic portfolio – Customize everything from the admin panel. Finance, CS, analytics.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<style>
+/* ---------- ORIGINAL COMPLETE STYLES (exactly as first version, fully restored) ---------- */
+:root{--bg:#000;--bg2:#080808;--bg3:#0f0f11;--bg4:#161619;--blue:#4da6ff;--blue2:#82c4ff;--blue3:#1a5fa8;--glow:rgba(77,166,255,.22);--pale:rgba(77,166,255,.09);--pale2:rgba(77,166,255,.05);--w:#eef2f8;--w2:#c8d4e8;--m:#586070;--m2:#8090a8;--bd:rgba(77,166,255,.13);--bd2:rgba(77,166,255,.28);--ok:#3ddc84;--err:#ff5c5c;--fd:'Cormorant Garamond',Georgia,serif;--fb:'Inter',system-ui,sans-serif;--ease:cubic-bezier(.4,0,.2,1);--spring:cubic-bezier(.34,1.56,.64,1);--originOS:cubic-bezier(.175,.885,.32,1.275);--slow:cubic-bezier(.16,1,.3,1)}
+body.violet{--bg:#d6e8f7;--bg2:#c0d9f0;--bg3:#a8c8e8;--bg4:#8eb5d8;--blue:#0369a1;--blue2:#0ea5e9;--blue3:#e0f2fe;--glow:rgba(3,105,161,.22);--pale:rgba(3,105,161,.13);--pale2:rgba(3,105,161,.07);--w:#060f1e;--w2:#0c1f38;--m:#1e4060;--m2:#0f2e50;--bd:rgba(3,105,161,.22);--bd2:rgba(3,105,161,.42);--ok:#047857;--err:#dc2626}
+body.violet .slabel{border:1px solid rgba(255,255,255,.5);border-radius:100px;padding:.22rem .9rem .22rem .7rem;box-shadow:0 2px 8px rgba(0,0,0,.08);color:var(--blue)}
+body.violet .skill-gtitle{border:1px solid rgba(255,255,255,.45);border-radius:8px;padding:.18rem .75rem;box-shadow:0 2px 6px rgba(0,0,0,.07);color:var(--blue);margin-bottom:1.2rem;width:auto}
+body.violet .tag.hi{border-color:rgba(255,255,255,.6);box-shadow:0 2px 8px rgba(0,0,0,.08);color:var(--blue);font-weight:600}
+body.violet .cert-card{border-color:rgba(255,255,255,.55);box-shadow:0 4px 18px rgba(0,0,0,.08),inset 0 1px 0 rgba(255,255,255,.6)}
+body.violet .cert-card:hover{background:rgba(255,255,255,.62);box-shadow:0 12px 36px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.7)}
+body.violet .tcard{border-color:rgba(255,255,255,.55);box-shadow:0 4px 18px rgba(0,0,0,.07),inset 0 1px 0 rgba(255,255,255,.6)}
+body.violet .tcard:hover{background:rgba(255,255,255,.6);border-color:rgba(255,255,255,.75);box-shadow:0 8px 28px rgba(0,0,0,.1)}
+body.violet .ecard{border-color:rgba(255,255,255,.52);box-shadow:0 4px 16px rgba(0,0,0,.07),inset 0 1px 0 rgba(255,255,255,.55)}
+body.violet .titem:hover .ecard{background:rgba(255,255,255,.6);border-color:rgba(255,255,255,.72);box-shadow:0 12px 36px rgba(0,0,0,.1),0 0 24px rgba(3,105,161,.15)}
+body.violet .heyebrow{border:1px solid rgba(255,255,255,.45);border-radius:100px;padding:.2rem .9rem .2rem .55rem;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+body.violet #nav.sc{border-bottom:1px solid rgba(255,255,255,.5);box-shadow:0 4px 20px rgba(0,0,0,.08)}
+body.violet .acard{border-color:rgba(255,255,255,.55);box-shadow:0 4px 18px rgba(0,0,0,.07),inset 0 1px 0 rgba(255,255,255,.6)}
+body.violet{background:var(--bg);color:var(--w)}
+body.violet ::selection{background:var(--blue3);color:var(--w)}
+body.violet ::-webkit-scrollbar-track{background:var(--bg2)}
+body.violet ::-webkit-scrollbar-thumb{background:var(--blue2)}
+body.violet #cg{background:radial-gradient(circle,rgba(3,105,161,.18) 0%,transparent 68%)}
+body.violet .logo{color:var(--w)}
+body.violet .navl a{color:var(--m2)}
+body.violet .navl a:hover{color:var(--blue)}
+body.violet .navl a::after{background:var(--blue)}
+body.violet .nctа{border-color:var(--blue)!important;color:var(--blue)!important}
+body.violet .nctа:hover{background:var(--blue)!important;color:#fff!important}
+body.violet .hbtn span{background:var(--w)}
+body.violet .hgrid{background-image:linear-gradient(var(--pale) 1px,transparent 1px),linear-gradient(90deg,var(--pale) 1px,transparent 1px)}
+body.violet .hglow1{background:radial-gradient(ellipse,var(--pale) 0%,transparent 62%)}
+body.violet .hglow2{background:radial-gradient(ellipse,var(--pale2) 0%,transparent 65%)}
+body.violet .heyebrow{color:var(--blue)}
+body.violet .heyebrow::before{background:var(--blue)}
+body.violet .hname{color:var(--w)}
+body.violet .htagline{color:var(--m2)}
+body.violet .hphoto{background:var(--bg3);border-color:var(--bd2);transition:box-shadow .6s}
+body.violet .hphoto:hover{box-shadow:0 0 70px rgba(3,105,161,.5),inset 0 0 30px rgba(3,105,161,.08)}
+body.violet .ring1{border-color:var(--bd2)}
+body.violet .ring2{border-color:var(--bd)}
+body.violet .btnp{color:var(--w)}
+body.violet .btnp:hover{color:#fff!important;box-shadow:0 8px 28px rgba(0,119,181,.45)}
+body.violet .btno{border-color:var(--bd2);color:var(--w)}
+body.violet .btno:hover{color:#fff!important;border-color:transparent}
+body.violet .sec{background:var(--bg)}
+body.violet .secdark{background:var(--bg2)}
+body.violet .slabel{color:var(--blue)}
+body.violet .slabel::before{background:var(--blue)}
+body.violet .stitle{color:var(--w)}
+body.violet .accent{background:linear-gradient(135deg,var(--blue),var(--blue2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+body.violet .about-bio p{color:var(--m2)}
+body.violet .tcard{background:#fff;border-color:var(--bd);box-shadow:0 2px 12px rgba(0,0,0,.05)}
+body.violet .tcard:hover{border-color:var(--bd2);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+body.violet .tcard h3{color:var(--w)}
+body.violet .tcard p{color:var(--m2)}
+body.violet .tline{border-color:var(--bd)}
+body.violet .tdot{background:var(--blue);border-color:var(--bg);box-shadow:0 0 0 3px var(--pale)}
+body.violet .tdate{color:var(--blue)}
+body.violet .ecard{background:#fff;border-color:var(--bd);box-shadow:0 2px 12px rgba(0,0,0,.05)}
+body.violet .titem:hover .ecard{border-color:var(--bd2);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+body.violet .eyear{background:var(--pale);border-color:var(--bd2);color:var(--blue)}
+body.violet .etype{color:var(--m)}
+body.violet .enum{background:var(--pale);border-color:var(--bd2);color:var(--blue)}
+body.violet .esubs{color:var(--m)}
+body.violet .skill-gtitle{color:var(--blue)}
+body.violet .sbar-label{color:var(--m2)}
+body.violet .sbar-label span:last-child{color:var(--blue)}
+body.violet .sbar-track{background:var(--bg3)}
+body.violet .tag{background:#fff;border-color:var(--bd);color:var(--m2)}
+body.violet .tag:hover,body.violet .tag.hi{border-color:var(--blue);color:var(--blue);background:var(--pale)}
+body.violet .cert-card{background:#fff;border-color:var(--bd);box-shadow:0 2px 12px rgba(0,0,0,.05)}
+body.violet .cert-card:hover{border-color:var(--bd2);box-shadow:0 16px 40px rgba(0,0,0,.1)}
+body.violet .cert-icon{background:var(--pale);border-color:var(--bd2)}
+body.violet .cert-name{color:var(--w)}
+body.violet .cert-issuer{color:var(--m2)}
+body.violet .cert-year{color:var(--m)}
+body.violet .clink{color:var(--m2)}
+body.violet .clink:hover{color:#fff}
+body.violet .fgroup label{color:var(--m)}
+body.violet .fgroup input,body.violet .fgroup textarea{background:#fff;border-color:var(--bd);color:var(--w)}
+body.violet .fgroup input:focus,body.violet .fgroup textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--pale)}
+body.violet footer{border-top-color:var(--bd);background:var(--bg2)}
+body.violet .foot-name{color:var(--blue)}
+body.violet .foot-copy{color:var(--m)}
+body.violet .foot-links a{color:var(--m2)}
+body.violet .foot-links a:hover{color:var(--blue)}
+body.violet #adm-overlay{background:rgba(0,0,0,.45)}
+body.violet .adm-wrap{background:var(--bg);border:1px solid var(--bd)}
+body.violet .login-box{background:#fff;border:1px solid var(--bd);box-shadow:0 20px 60px rgba(0,0,0,.12)}
+body.violet .adm-header{border-bottom-color:var(--bd)}
+body.violet .adm-tab{border-color:var(--bd);color:var(--m2);background:#fff}
+body.violet .adm-tab:hover{border-color:var(--bd2);color:var(--blue)}
+body.violet .adm-tab.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+body.violet .acard{background:#fff;border-color:var(--bd);box-shadow:0 2px 12px rgba(0,0,0,.05)}
+body.violet .acard-title{color:var(--w)}
+body.violet .albl{color:var(--m)}
+body.violet .ainput{background:var(--bg2);border-color:var(--bd);color:var(--w)}
+body.violet .ainput:focus{border-color:var(--blue);background:#fff}
+body.violet .savebtn{background:var(--blue);box-shadow:0 0 14px var(--glow)}
+body.violet .delbtn{color:#dc2626;border-color:#dc2626}
+body.violet .edtbtn{color:var(--m2);border-color:var(--bd)}
+body.violet .adm-hr{background:var(--bd)}
+body.violet .cert-list-item{border-bottom-color:var(--bd)}
+body.violet .cli-name{color:var(--w)}
+body.violet .cli-meta{color:var(--m)}
+body.violet #pw-input{background:var(--bg2);border-color:var(--bd);color:var(--w)}
+body.violet .login-hint{color:var(--m)}
+body.violet #theme-btn{border-color:var(--bd)!important;color:var(--m2)!important}
+#theme-menu{position:absolute;top:calc(100% + 8px);right:0;background:var(--bg3);border:1px solid var(--bd2);border-radius:10px;padding:.4rem;display:none;flex-direction:column;gap:.2rem;z-index:2000;min-width:160px;box-shadow:0 8px 24px rgba(0,0,0,.15)}
+#theme-menu.open{display:flex}
+.theme-opt{padding:.5rem .85rem;border-radius:7px;border:none;background:none;cursor:pointer;font-size:.82rem;font-family:var(--fb);color:var(--w2);text-align:left;display:flex;align-items:center;gap:.6rem}
+.theme-opt:hover{background:var(--pale);color:var(--blue)}
+.theme-opt.active{background:var(--pale);color:var(--blue);font-weight:600}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--bg);color:var(--w);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--blue3);color:#fff}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--blue3);border-radius:2px}
+#cg{position:fixed;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(77,166,255,.055) 0%,transparent 68%);pointer-events:none!important;z-index:1;transform:translate(-50%,-50%);transition:width .4s,height .4s,opacity .4s;opacity:0}
+#nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.1rem 0;transition:background .5s var(--ease),box-shadow .5s,transform .38s cubic-bezier(.4,0,.2,1)}
+#nav.nav-hidden{transform:translateY(-110%)}
+#nav-peek{position:fixed;top:0;left:50%;transform:translateX(-50%);z-index:997;opacity:0;pointer-events:none;transition:opacity .3s}
+@media(max-width:680px){#nav-peek{display:none}}
+#nav-peek.show{opacity:1;pointer-events:auto}
+#nav-peek button{background:var(--bg3);border:1px solid var(--bd2);border-radius:0 0 12px 12px;padding:.28rem 1.4rem .38rem;cursor:pointer;color:var(--m2);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.35rem;transition:all .2s;font-family:var(--fb);box-shadow:0 4px 12px rgba(0,0,0,.2)}
+#nav-peek button:hover{color:var(--blue);border-color:var(--blue)}
+/* Hover zone — invisible strip at very top that triggers nav reveal without overlap */
+#nav-hover-zone{position:fixed;top:0;left:0;right:0;height:6px;z-index:998;pointer-events:auto}
+.ni{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--fd);font-size:1.6rem;font-weight:700;color:var(--w);text-decoration:none;letter-spacing:-.02em}
+.logo em{color:var(--blue);font-style:normal}
+.navl{display:flex;align-items:center;gap:2.2rem;list-style:none}
+.navl a{color:var(--m2);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;transition:color .3s;position:relative}
+.navl a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--blue);transition:width .35s var(--ease)}
+.navl a:hover{color:var(--w)}
+.navl a:hover::after{width:100%}
+.nctа{padding:.48rem 1.2rem;border:1px solid var(--bd2);border-radius:6px;color:var(--blue)!important;transition:background .25s,box-shadow .25s,transform .2s!important}
+.nctа:hover{background:var(--blue)!important;color:#fff!important;box-shadow:0 0 18px var(--glow);transform:translateY(-1px)!important}
+.nctа::after{display:none!important}
+.hbtn{display:none;flex-direction:column;gap:5px;border:none;cursor:pointer;padding:10px;border-radius:9px;transition:background .2s,border-color .2s;-webkit-tap-highlight-color:transparent}
+@media(max-width:680px){.hbtn{display:flex!important;position:fixed!important;top:10px!important;right:12px!important;z-index:10000!important;background:rgba(0,0,0,.75)!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;border:1.5px solid rgba(255,255,255,.18)!important;box-shadow:0 2px 20px rgba(0,0,0,.4)!important;min-width:48px!important;min-height:48px!important;width:48px!important;height:48px!important;align-items:center!important;justify-content:center!important;border-radius:12px!important;touch-action:manipulation!important}}
+.hbtn span{display:block;width:22px;height:1.5px;background:#fff!important;border-radius:2px;transition:.35s var(--ease);transform-origin:center}
+.hbtn.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hbtn.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hbtn.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:8rem 2rem 4rem}
+.hbg{position:absolute;inset:0}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(77,166,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(77,166,255,.035) 1px,transparent 1px);background-size:48px 48px;will-change:transform}
+.hglow1{position:absolute;top:25%;left:45%;transform:translate(-50%,-50%);width:720px;height:720px;background:radial-gradient(ellipse,rgba(77,166,255,.065) 0%,transparent 62%);pointer-events:none}
+.hglow2{position:absolute;bottom:10%;right:10%;width:380px;height:380px;background:radial-gradient(ellipse,rgba(77,166,255,.04) 0%,transparent 65%);pointer-events:none}
+.hinner{position:relative;z-index:1;display:flex;align-items:center;gap:5rem;max-width:1120px;width:100%;flex-wrap:wrap;justify-content:center}
+.hphoto-wrap{position:relative;flex-shrink:0}
+.hphoto{width:230px;height:230px;border-radius:50%;background:var(--bg4);border:1.5px solid var(--bd2);overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;box-shadow:0 0 50px var(--glow),inset 0 0 30px rgba(77,166,255,.025);transition:box-shadow .6s}
+.hphoto:hover{box-shadow:0 0 80px rgba(77,166,255,.4),inset 0 0 30px rgba(77,166,255,.04)}
+.hphoto img{width:100%;height:100%;object-fit:cover;display:none}
+.hphoto-placeholder{display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--m);font-size:.78rem;text-align:center}
+.hphoto-placeholder svg{opacity:.4}
+.ring1{position:absolute;top:-14px;left:-14px;right:-14px;bottom:-14px;border-radius:50%;border:1px solid rgba(77,166,255,.22);animation:spin 24s linear infinite}
+.ring2{position:absolute;top:-24px;left:-24px;right:-24px;bottom:-24px;border-radius:50%;border:1px dashed rgba(77,166,255,.1);animation:spin 48s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.htxt{flex:1;min-width:280px}
+.heyebrow{display:flex;align-items:center;gap:.6rem;color:var(--blue);font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;margin-bottom:1.4rem}
+.heyebrow::before{content:'';width:22px;height:1px;background:var(--blue);flex-shrink:0}
+.hname{font-family:var(--fd);font-size:clamp(3.2rem,7.5vw,6rem);font-weight:700;line-height:.98;color:var(--w);margin-bottom:1.2rem;letter-spacing:-.02em}
+.hname span{background:linear-gradient(135deg,var(--blue) 30%,var(--blue2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.htagline{font-size:1rem;color:var(--m2);max-width:460px;margin-bottom:2.6rem;line-height:1.85;font-weight:300}
+.hbtns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.82rem 1.9rem;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;cursor:pointer;border:none;letter-spacing:.03em;position:relative;overflow:hidden;transition:transform .25s var(--ease),box-shadow .25s}
+.btn>*{position:relative;z-index:2;}
+.btn:hover::before{opacity:1}
+.btn:active{transform:scale(.97)!important}
+.btnp{display:inline-flex;align-items:center;gap:.75rem;padding:.75rem 1.6rem;border-radius:10px;border:1px solid var(--bd);background:transparent;color:var(--m2);font-weight:500;font-size:.88rem;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;transition:color .3s,border-color .35s,box-shadow .35s,transform .25s var(--spring);}
+.btnp::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#0077b5,#0a66c2);opacity:0;transition:opacity .35s ease;z-index:0;pointer-events:none;}
+.btnp:hover::after{opacity:1;}
+.btnp:hover{color:#fff!important;border-color:transparent;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,119,181,.4);}
+.btno{display:inline-flex;align-items:center;gap:.75rem;padding:.75rem 1.6rem;border-radius:10px;border:1px solid var(--bd);background:transparent;color:var(--m2);font-weight:500;font-size:.88rem;text-decoration:none;cursor:pointer;position:relative;overflow:hidden;transition:color .3s,border-color .35s,box-shadow .35s,transform .25s var(--spring);}
+.btno::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#4da6ff,#1a5fa8);opacity:0;transition:opacity .35s ease;z-index:0;pointer-events:none;}
+.btno:hover::after{opacity:1;}
+.btno:hover{color:#fff!important;border-color:transparent;transform:translateY(-2px);box-shadow:0 8px 24px rgba(77,166,255,.4);}
+.scrollhint{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;z-index:1}
+.scrollhint span{font-size:.62rem;letter-spacing:.22em;color:var(--m);text-transform:uppercase}
+.scrollline{width:1px;height:48px;background:linear-gradient(var(--blue),transparent);animation:scrolldrop 1.8s cubic-bezier(.4,0,.2,1) infinite;transform-origin:top}
+@keyframes pulse{0%,100%{opacity:.2}50%{opacity:.9}}
+@keyframes scrolldrop{0%{transform:scaleY(0);opacity:0}20%{opacity:1}80%{opacity:1;transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+.sec{padding:7.5rem 0;background:var(--bg)}
+.secdark{background:var(--bg2)}
+.ct{max-width:1200px;margin:0 auto;padding:0 2rem}
+.slabel{display:flex;align-items:center;gap:.6rem;font-size:.65rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blue);margin-bottom:1.5rem;font-weight:600}
+.slabel::before{content:'';width:16px;height:1px;background:var(--blue)}
+.stitle{font-family:var(--fd);font-size:clamp(2.1rem,4.2vw,3.2rem);font-weight:700;line-height:1.1;margin-bottom:3rem;color:var(--w)}
+.accent{background:linear-gradient(135deg,var(--blue),var(--blue2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.rv{opacity:0;transform:translateY(44px) scale(.96);transition:opacity .7s var(--slow),transform .85s var(--originOS);}
+.rv.vis{opacity:1;transform:translateY(0) scale(1);}
+.stitle{will-change:transform}
+.slabel{will-change:transform}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.25s}.rv.d4{transition-delay:.34s}
+.fup{opacity:0;transform:translateY(36px);animation:fup .95s var(--slow) forwards}
+.fup.d1{animation-delay:.1s}.fup.d2{animation-delay:.22s}.fup.d3{animation-delay:.34s}
+@keyframes fup{to{opacity:1;transform:translateY(0)}}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start}
+.about-bio p{color:var(--m2);margin-bottom:1.3rem;line-height:1.95;font-size:.97rem;font-weight:300}
+.trait-cards{display:flex;flex-direction:column;gap:1rem}
+.tcard{background:var(--bg3);border:1px solid var(--bd);border-radius:14px;padding:1.5rem 1.6rem;display:flex;align-items:flex-start;gap:1rem;transition:border-color .5s,transform .75s var(--originOS),box-shadow .5s;cursor:default}
+.tcard:hover{border-color:var(--bd2);transform:translateX(10px);box-shadow:-5px 0 24px rgba(77,166,255,.12),0 8px 30px rgba(0,0,0,.4)}
+.tcard-icon{font-size:1.5rem;flex-shrink:0;transition:transform .55s var(--spring)}
+.tcard:hover .tcard-icon{transform:scale(1.25) rotate(-8deg)}
+.tcard h3{font-size:.93rem;font-weight:600;margin-bottom:.3rem;color:var(--w)}
+.tcard p{font-size:.82rem;color:var(--m2);margin:0;line-height:1.65}
+.timeline{position:relative;padding-left:1.8rem;max-width:800px;margin:0 auto}
+.timeline::before{content:'';position:absolute;left:0;top:6px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--bd2) 0%,rgba(77,166,255,.04) 100%)}
+.titem{position:relative;padding:0 0 3.2rem 2.4rem}
+.titem:last-child{padding-bottom:0}
+.tdot{position:absolute;left:-2.55rem;top:.45rem;width:13px;height:13px;background:var(--blue);border:2px solid var(--bg);box-shadow:0 0 0 3px var(--pale),0 0 14px var(--blue);transform:rotate(45deg);border-radius:2px;transition:transform .4s var(--spring),box-shadow .4s,background .3s}
+.titem:hover .tdot{transform:rotate(45deg) scale(1.5);box-shadow:0 0 0 5px var(--pale),0 0 24px var(--blue),0 0 40px rgba(77,166,255,.3);background:var(--blue2)}
+.tdot.idle-pulse{animation:idleDotPulse 2.4s ease-in-out infinite}
+@keyframes idleDotPulse{0%,100%{box-shadow:0 0 0 3px var(--pale),0 0 10px var(--blue);transform:rotate(45deg) scale(1)}50%{box-shadow:0 0 0 7px rgba(77,166,255,.25),0 0 28px var(--blue);transform:rotate(45deg) scale(1.3)}}
+body.violet .tdot{background:var(--blue);box-shadow:0 0 0 3px var(--pale),0 0 10px rgba(3,105,161,.5)}
+body.violet .titem:hover .tdot{box-shadow:0 0 0 5px var(--pale),0 0 20px rgba(3,105,161,.6)}
+.tdate{font-size:.68rem;font-weight:600;color:var(--blue);letter-spacing:.16em;text-transform:uppercase;margin-bottom:.4rem}
+.titem h3{font-size:1.05rem;font-weight:600;color:var(--w);margin-bottom:.15rem;transition:color .3s}
+.titem:hover h3{color:var(--blue)}
+.titem h4{font-size:.85rem;color:var(--blue);font-weight:500;margin-bottom:.7rem;opacity:.85}
+.titem ul{list-style:none}
+.titem ul li{font-size:.87rem;color:var(--m2);padding:.18rem 0 .18rem 1rem;position:relative;line-height:1.65}
+.titem ul li::before{content:'›';position:absolute;left:0;color:var(--blue);font-size:1rem}
+.ecard{background:var(--bg3);border:1px solid var(--bd);border-radius:14px;padding:1.5rem 1.7rem;margin-top:.5rem;transition:border-color .4s,transform .55s var(--spring),box-shadow .4s,background .4s}
+.titem:hover .ecard{border-color:var(--bd2);transform:translateX(8px);box-shadow:0 12px 36px rgba(0,0,0,.45),-4px 0 16px rgba(77,166,255,.08),0 0 28px rgba(77,166,255,.12);background:rgba(77,166,255,.04)}
+.etop{display:flex;align-items:center;gap:.7rem;margin-bottom:.6rem;flex-wrap:wrap}
+.eyear{font-size:.68rem;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;background:var(--pale);border:1px solid var(--bd2);border-radius:100px;padding:.22rem .7rem}
+.etype{font-size:.68rem;color:var(--m);letter-spacing:.08em;text-transform:uppercase}
+.ehead{display:flex;align-items:center;gap:.65rem;margin-bottom:.3rem}
+.enum{width:26px;height:26px;border-radius:50%;background:var(--pale);border:1px solid var(--bd2);color:var(--blue);font-family:var(--fd);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .35s,transform .4s var(--spring)}
+.titem:hover .enum{background:rgba(77,166,255,.2);transform:scale(1.15)}
+.ecard h3{font-size:1rem;font-weight:600;color:var(--w);transition:color .3s}
+.titem:hover .ecard h3{color:var(--blue)}
+.ecard h4{font-size:.83rem;color:var(--blue);font-weight:500;margin-bottom:.3rem;opacity:.85}
+.ecard p{font-size:.83rem;color:var(--m2)}
+.esubs{margin-top:.65rem;padding-top:.65rem;border-top:1px solid var(--bd);font-size:.8rem;color:var(--m);line-height:1.8}
+.exp-ecard ul{list-style:none;margin-top:.6rem}
+.exp-ecard ul li{font-size:.87rem;color:var(--m2);padding:.18rem 0 .18rem 1rem;position:relative;line-height:1.65}
+.exp-ecard ul li::before{content:'›';position:absolute;left:0;color:var(--blue);font-size:1rem}
+/* Expandable bullet points */
+.exp-bullet{position:relative;cursor:default}
+.exp-bullet-trigger{display:flex;align-items:center;gap:.45rem;padding:.28rem .5rem .28rem 0;border-radius:7px;transition:background .25s,padding-left .25s}
+.exp-bullet-trigger:hover{background:rgba(77,166,255,.07);padding-left:.5rem}
+.exp-bullet-arrow{font-size:.72rem;color:var(--blue);transition:transform .35s var(--spring);display:inline-block;line-height:1;flex-shrink:0;opacity:.7}
+.exp-bullet-trigger:hover .exp-bullet-arrow{opacity:1}
+.exp-bullet.has-detail .exp-bullet-trigger{cursor:pointer}
+.exp-bullet.has-detail.open .exp-bullet-arrow{transform:rotate(90deg)}
+.exp-bullet-detail{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.16,1,.3,1),opacity .35s;opacity:0;padding-left:1.1rem;border-left:2px solid rgba(77,166,255,.2);margin:.3rem 0 .3rem 0}
+.exp-bullet.open .exp-bullet-detail{max-height:400px;opacity:1}
+.exp-bullet-detail p{font-size:.8rem;color:var(--m2);line-height:1.7;padding:.3rem 0}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.skill-gtitle{font-size:.72rem;font-weight:600;color:var(--blue);letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.4rem}
+.sbars{display:flex;flex-direction:column;gap:1.1rem}
+.sbar-item{padding:.4rem .5rem;border-radius:8px;transition:background .3s}
+.sbar-item:hover{background:rgba(77,166,255,.04)}
+.sbar-item:hover .sbar-label{color:var(--w)}
+.sbar-label{font-size:.83rem;color:var(--m2);display:flex;justify-content:space-between;margin-bottom:.45rem;transition:color .3s}
+.sbar-label span:last-child{color:var(--blue);font-weight:600}
+.sbar-track{height:3px;background:var(--bg4);border-radius:2px;overflow:visible;position:relative}
+.sbar-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--blue2));border-radius:2px;width:0;transition:width 1.5s var(--slow);box-shadow:0 0 8px var(--glow);position:relative}
+.sbar-fill::after{content:'';position:absolute;right:-1px;top:-2px;width:7px;height:7px;border-radius:50%;background:var(--blue2);box-shadow:0 0 6px var(--blue);opacity:0;transition:opacity .3s}
+.sbar-item:hover .sbar-fill::after{opacity:1}
+.tagcloud{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{padding:.3rem .85rem;border-radius:100px;font-size:.76rem;font-weight:500;background:var(--bg3);border:1px solid var(--bd);color:var(--m2);transition:border-color .25s,color .25s,background .25s,transform .25s,box-shadow .25s;cursor:default}
+.tag:hover{border-color:var(--blue);color:var(--blue);background:var(--pale);transform:translateY(-2px);box-shadow:0 4px 14px rgba(77,166,255,.15)}
+.tag.hi{border-color:var(--bd2);color:var(--blue);background:var(--pale)}
+.tag.hi:hover{background:rgba(77,166,255,.16);box-shadow:0 4px 18px rgba(77,166,255,.22)}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.4rem}
+.cert-card{background:var(--bg3);border:1px solid var(--bd);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;text-decoration:none;color:inherit;position:relative;overflow:hidden;transition:border-color .35s,transform .45s var(--spring),box-shadow .35s}
+.cert-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(90deg,transparent 0%,var(--blue) 50%,transparent 100%);opacity:0;transition:opacity .4s}
+.cert-card:hover{border-color:var(--bd2);transform:translateY(-7px);box-shadow:0 22px 50px rgba(0,0,0,.65),0 0 22px rgba(77,166,255,.12)}
+.cert-card:hover::after{opacity:1}
+.cert-icon{width:42px;height:42px;border-radius:10px;background:var(--pale);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:transform .45s var(--spring),background .35s}
+.cert-card:hover .cert-icon{transform:rotate(-8deg) scale(1.18);background:rgba(77,166,255,.16)}
+.cert-name{font-weight:600;font-size:.92rem;color:var(--w);transition:color .3s;line-height:1.35}
+.cert-card:hover .cert-name{color:var(--blue)}
+.cert-issuer{font-size:.77rem;color:var(--blue);opacity:.85}
+.cert-year{font-size:.73rem;color:var(--m);margin-top:auto}
+.cert-desc{font-size:.72rem;color:var(--m2);margin-top:.25rem;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:5rem;align-items:start}
+.contact-info p{color:var(--m2);margin-bottom:2rem;font-size:.95rem;font-weight:300;line-height:1.85}
+.contact-links{display:flex;flex-direction:column;gap:.75rem}
+.clink{display:inline-flex;align-items:center;gap:.75rem;color:var(--m2);text-decoration:none;font-size:.88rem;font-weight:500;padding:.65rem 1.2rem;border-radius:10px;border:1px solid var(--bd);background:transparent;position:relative;overflow:hidden;transition:color .3s,border-color .35s,box-shadow .35s,transform .25s var(--spring);width:fit-content;min-width:220px}
+.clink::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .35s ease;z-index:0}
+.clink span{position:relative;z-index:1;transition:transform .35s var(--spring)}
+.clink:hover{color:#fff;border-color:transparent;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.clink:hover::before{opacity:1}
+.clink[data-icon="linkedin"]::before{background:linear-gradient(135deg,#0077b5,#0a66c2)}
+.clink[data-icon="email"]::before{background:linear-gradient(135deg,#4da6ff,#1a5fa8)}
+.clink[data-icon="github"]::before{background:linear-gradient(135deg,#333,#24292e)}
+.clink[data-icon="twitter"]::before{background:linear-gradient(135deg,#1da1f2,#0d8ecf)}
+.clink[data-icon="instagram"]::before{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+.cform{display:flex;flex-direction:column;gap:1.2rem}
+.fgroup{display:flex;flex-direction:column;gap:.4rem}
+.fgroup label{font-size:.7rem;font-weight:600;color:var(--m);text-transform:uppercase;letter-spacing:.12em}
+.fgroup input,.fgroup textarea{background:var(--bg3);border:1px solid var(--bd);border-radius:9px;padding:.88rem 1.05rem;color:var(--w);font-family:var(--fb);font-size:.9rem;outline:none;resize:vertical;width:100%;transition:border-color .35s,box-shadow .35s,background .3s}
+.fgroup input:hover,.fgroup textarea:hover{border-color:rgba(77,166,255,.28)}
+.fgroup input:focus,.fgroup textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px var(--pale),0 0 18px rgba(77,166,255,.07);background:rgba(77,166,255,.025)}
+.fnote{font-size:.8rem;color:var(--ok);text-align:center;min-height:1.2rem}
+.fw{width:100%;justify-content:center}
+footer{padding:2.2rem 0;border-top:1px solid var(--bd)}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.foot-name{font-family:var(--fd);font-weight:700;color:var(--blue);font-size:1.1rem}
+.foot-copy{font-size:.78rem;color:var(--m)}
+.foot-links{display:flex;gap:1.5rem}
+.foot-links a{color:var(--m);text-decoration:none;font-size:.82rem;transition:color .25s,letter-spacing .25s}
+.foot-links a:hover{color:var(--blue);letter-spacing:.03em}
+#adm-overlay{display:none;position:fixed;inset:0;background:var(--bg);z-index:9000;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.adm-wrap{max-width:780px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.adm-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.2rem;background:var(--bg2);border-bottom:1px solid var(--bd);border-radius:12px;margin-bottom:1.2rem;gap:.8rem}
+.adm-logo{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--w)}
+.adm-logo em{color:var(--blue);font-style:normal}
+.adm-close-btn{background:none;border:1px solid var(--bd);border-radius:8px;padding:.4rem .9rem;color:var(--m2);cursor:pointer;font-size:.82rem;font-family:var(--fb);transition:all .2s;white-space:nowrap}
+.adm-close-btn:hover{border-color:var(--err);color:var(--err)}
+.adm-tabs{display:flex;gap:.4rem;overflow-x:auto;padding:.4rem;background:var(--bg2);border-radius:12px;margin-bottom:1.2rem;scrollbar-width:none;-ms-overflow-style:none;flex-wrap:nowrap}
+.adm-tabs::-webkit-scrollbar{display:none}
+.adm-tab{white-space:nowrap;padding:.55rem 1rem;border-radius:8px;border:none;background:none;color:var(--m2);cursor:pointer;font-size:.8rem;font-family:var(--fb);font-weight:500;transition:all .2s;flex-shrink:0}
+.adm-tab.on{background:var(--blue);color:#fff;box-shadow:0 2px 12px var(--glow)}
+.adm-tab:hover:not(.on){background:var(--bg3);color:var(--w)}
+.adm-page{display:none}.adm-page.on{display:block}
+.acard{background:var(--bg2);border:1px solid var(--bd);border-radius:14px;padding:1.4rem;margin-bottom:1rem}
+.acard-title{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--w);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--bd)}
+.albl{display:block;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--m2);margin-bottom:.4rem;margin-top:.9rem}
+.ainput{width:100%;padding:.72rem 1rem;background:var(--bg3);border:1px solid var(--bd);border-radius:9px;color:var(--w);font-family:var(--fb);font-size:.88rem;outline:none;transition:border-color .2s,box-shadow .2s;box-sizing:border-box}
+.ainput:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(77,166,255,.12)}
+textarea.ainput{resize:vertical;min-height:80px}
+select.ainput{cursor:pointer;appearance:auto}
+.savebtn{margin-top:1rem;padding:.72rem 1.8rem;background:var(--blue);color:#000;border:none;border-radius:9px;font-weight:700;font-size:.88rem;cursor:pointer;transition:background .2s,box-shadow .2s,transform .2s;box-shadow:0 0 16px var(--glow);font-family:var(--fb);width:100%}
+.savebtn:hover{background:var(--blue2);transform:translateY(-1px)}
+.delbtn{padding:.42rem .95rem;background:none;color:var(--err);border:1px solid var(--err);border-radius:7px;font-family:var(--fb);font-size:.78rem;cursor:pointer;transition:all .2s}
+.delbtn:hover{background:var(--err);color:#fff}
+.edtbtn{padding:.4rem .9rem;background:none;color:var(--m2);border:1px solid var(--bd);border-radius:7px;font-family:var(--fb);font-size:.78rem;cursor:pointer;transition:all .2s;margin-right:.4rem}
+.edtbtn:hover{border-color:var(--blue);color:var(--blue)}
+.smsg{display:inline-block;font-size:.8rem;color:var(--ok);margin-left:.8rem;opacity:0;transition:opacity .3s}
+.adm-hr{height:1px;background:var(--bd);margin:1.2rem 0}
+.pw-msg{font-size:.82rem;margin-top:.7rem;min-height:1.2rem}
+.cert-list-item{display:flex;align-items:center;gap:.8rem;padding:.8rem 1rem;background:var(--bg3);border:1px solid var(--bd);border-radius:9px;margin-bottom:.5rem}
+.cli-left{flex:1;min-width:0}
+.cli-name{font-weight:600;font-size:.88rem;color:var(--w);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cli-meta{font-size:.76rem;color:var(--m2);margin-top:.15rem}
+.gr2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+@media(max-width:480px){.gr2{grid-template-columns:1fr}}
+.adm-login{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem}
+.login-box{background:var(--bg2);border:1px solid var(--bd);border-radius:16px;padding:2.5rem 2rem;width:100%;max-width:380px;text-align:center}
+.login-title{font-family:var(--fd);font-size:2rem;font-weight:700;color:var(--w);margin-bottom:.3rem}
+.login-title em{color:var(--blue);font-style:normal}
+.login-sub{font-size:.85rem;color:var(--m2);margin-bottom:2rem}
+.pw-wrap{position:relative}
+.pw-wrap .ainput{padding-right:2.8rem}
+.pw-eye{position:absolute;right:.8rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--m2);font-size:1.1rem;padding:.2rem}
+.login-btn{width:100%;margin-top:1rem;padding:.9rem;background:var(--blue);color:#000;border:none;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer;font-family:var(--fb);transition:all .2s;box-shadow:0 0 20px var(--glow)}
+.login-btn:hover{background:var(--blue2)}
+.login-err{color:var(--err);font-size:.82rem;margin-top:.6rem;min-height:1.2rem}
+.login-hint{font-size:.76rem;color:var(--m);margin-top:1.2rem}
+body.violet .acard{background:var(--bg2);border-color:var(--bd)}
+body.violet .ainput{background:var(--bg3);border-color:var(--bd);color:var(--w)}
+body.violet .savebtn{background:var(--blue);box-shadow:0 0 14px var(--glow)}
+body.violet .delbtn{color:#dc2626;border-color:#dc2626}
+body.violet .edtbtn{color:var(--m2);border-color:var(--bd)}
+#adm-overlay{display:none;position:fixed;inset:0;background:#000;z-index:9000;overflow-y:auto}
+.adm-wrap{max-width:980px;margin:0 auto;padding:2rem}
+.adm-header{display:flex;justify-content:space-between;align-items:center;padding-bottom:1.5rem;border-bottom:1px solid var(--bd);margin-bottom:2rem}
+.adm-header h2{font-family:var(--fd);font-size:1.6rem;font-weight:700}
+.adm-header h2 em{color:var(--blue);font-style:normal}
+.adm-header-right{display:flex;gap:1rem;align-items:center}
+.adm-header-right a{color:var(--blue);font-size:.82rem;text-decoration:none}
+.adm-header-right a:hover{text-decoration:underline}
+.adm-login{min-height:100vh;display:flex;align-items:center;justify-content:center}
+.login-box{background:var(--bg2);border:1px solid var(--bd);border-radius:18px;padding:2.8rem;width:360px;text-align:center;box-shadow:0 0 60px rgba(77,166,255,.07)}
+.login-box h2{font-family:var(--fd);font-size:1.5rem;margin-bottom:.3rem}
+.login-box p{font-size:.85rem;color:var(--m2);margin-bottom:2rem}
+.login-box input{width:100%;padding:.82rem 1rem;margin-bottom:1rem;background:var(--bg3);border:1px solid var(--bd);border-radius:9px;color:var(--w);font-family:var(--fb);font-size:.9rem;outline:none;transition:border-color .3s}
+.login-box input:focus{border-color:var(--blue)}
+.login-err{color:var(--err);font-size:.82rem;margin-top:.6rem;min-height:1.2rem}
+.login-hint{color:var(--m);font-size:.76rem;margin-top:1rem}
+.adm-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.adm-tab{padding:.52rem 1.3rem;border-radius:8px;border:1px solid var(--bd);background:none;color:var(--m2);font-family:var(--fb);font-size:.82rem;cursor:pointer;transition:all .25s}
+.adm-tab:hover{border-color:var(--bd2);color:var(--w)}
+.adm-tab.on{background:var(--blue);color:#000;border-color:var(--blue);font-weight:700}
+.adm-page{display:none}
+.adm-page.on{display:block}
+.acard{background:var(--bg2);border:1px solid var(--bd);border-radius:14px;padding:1.8rem;margin-bottom:1.5rem}
+.acard-title{font-size:.7rem;color:var(--blue);text-transform:uppercase;letter-spacing:.14em;font-weight:600;margin-bottom:1.4rem}
+.albl{display:block;font-size:.74rem;color:var(--m2);text-transform:uppercase;letter-spacing:.08em;font-weight:500;margin-bottom:.38rem}
+.ainput{width:100%;padding:.8rem 1rem;margin-bottom:1.1rem;background:var(--bg3);border:1px solid var(--bd);border-radius:9px;color:var(--w);font-family:var(--fb);font-size:.88rem;outline:none;transition:border-color .25s}
+.ainput:focus{border-color:var(--blue)}
+textarea.ainput{resize:vertical}
+.savebtn{padding:.72rem 1.8rem;background:var(--blue);color:#000;border:none;border-radius:9px;font-weight:700;font-size:.88rem;cursor:pointer;transition:background .2s,box-shadow .2s,transform .2s;box-shadow:0 0 16px var(--glow)}
+.savebtn:hover{background:var(--blue2);transform:translateY(-1px)}
+.savebtn:active{transform:scale(.97)}
+.delbtn{padding:.42rem .95rem;background:none;color:var(--err);border:1px solid var(--err);border-radius:7px;font-family:var(--fb);font-size:.78rem;cursor:pointer;transition:all .2s}
+.delbtn:hover{background:var(--err);color:#fff}
+.edtbtn{padding:.4rem .9rem;background:none;color:var(--m2);border:1px solid var(--bd);border-radius:7px;font-family:var(--fb);font-size:.78rem;cursor:pointer;transition:all .2s;margin-right:.4rem}
+.edtbtn:hover{border-color:var(--blue);color:var(--blue)}
+.smsg{color:var(--ok);font-size:.82rem;margin-left:.8rem;display:none}
+.gr2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.adm-hr{border:none;border-top:1px solid var(--bd);margin:1.5rem 0}
+.cert-list-item{display:flex;align-items:center;justify-content:space-between;background:var(--bg3);border:1px solid var(--bd);border-radius:9px;padding:.85rem 1.1rem;margin-bottom:.7rem}
+.cli-left{display:flex;align-items:center;gap:.75rem}
+.cli-icon{font-size:1.2rem}
+.cli-name{font-size:.88rem;font-weight:500}
+.cli-meta{font-size:.74rem;color:var(--m)}
+.section-editor-fields{display:flex;flex-direction:column;gap:.2rem}
+.pw-msg{font-size:.82rem;margin-top:.7rem;min-height:1.2rem}
+.sbadge{display:inline-flex;align-items:center;gap:.4rem;padding:.26rem .75rem;border-radius:100px;font-size:.74rem;font-weight:600}
+.sbadge.ok{background:rgba(61,220,132,.1);color:var(--ok)}
+.sbadge.no{background:rgba(255,92,92,.1);color:var(--err)}
+.dot{width:7px;height:7px;border-radius:50%}
+.dot.g{background:var(--ok);animation:pulse 1.8s infinite}
+.dot.r{background:var(--err)}
+.stitle{position:relative;display:inline-block;cursor:default;isolation:isolate;}
+.stitle::after{content:'';position:absolute;inset:-6px -12px;border-radius:12px;background:transparent;border:1px solid transparent;transition:background .35s,border-color .35s,box-shadow .35s;pointer-events:none;z-index:1}
+.slabel{cursor:default;width:fit-content;position:relative;isolation:isolate;transition:background .3s,box-shadow .3s,padding .3s}
+.skill-gtitle{cursor:default;display:inline-block;width:fit-content;position:relative;isolation:isolate;transition:background .3s,box-shadow .3s,padding .3s,border-radius .3s}
+.navl a{border-radius:6px;padding:.15rem .4rem}
+.logo{border-radius:6px;padding:.1rem .3rem;transition:background .3s,box-shadow .3s}
+.heyebrow{transition:background .3s,box-shadow .3s,border-radius .3s,padding .3s}
+.stitle:hover::after{background:transparent;border-color:transparent;box-shadow:none}
+.stitle:hover{color:var(--blue2)}
+.slabel:hover{color:var(--blue2);letter-spacing:.28em}
+.skill-gtitle:hover{color:var(--blue2)}
+.navl a:hover{color:var(--w)}
+.logo:hover{color:var(--blue)}
+.heyebrow:hover{color:var(--blue2);letter-spacing:.26em}
+body.violet .stitle:hover::after{background:transparent;border-color:transparent;box-shadow:none}
+body.violet .stitle:hover{color:var(--blue)}
+body.violet .slabel:hover{color:var(--blue);letter-spacing:.28em}
+body.violet .skill-gtitle:hover{color:var(--blue);letter-spacing:.2em}
+body.violet .navl a:hover{color:var(--blue)}
+body.violet .logo:hover{color:var(--blue)}
+body.violet .heyebrow:hover{color:var(--blue);letter-spacing:.26em}
+.custom-sec{padding:5rem 0 0}
+.custom-sec .ct{max-width:1200px;margin:0 auto;padding:0 2rem}
+.custom-sec-body{font-size:.97rem;color:var(--m2);line-height:1.95;font-weight:300;max-width:720px;white-space:pre-wrap}
+body.violet .custom-sec-body,body.violet .custom-sec .stitle{color:var(--m2)}
+@media(max-width:900px){.about-grid,.skills-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}.hinner{flex-direction:column;gap:2.5rem;text-align:center}.htagline{margin-inline:auto}.hbtns{justify-content:center}.heyebrow{justify-content:center}.scrollhint{display:none}}
+@media(max-width:680px){.navl-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:996;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}.navl-backdrop.open{display:block}.navl{display:flex!important;flex-direction:column;position:fixed;top:0;right:0;bottom:0;width:72vw;max-width:300px;background:rgba(8,10,20,.97);border-left:1px solid rgba(77,166,255,.15);padding:5rem 1.8rem 2rem;gap:0;z-index:997;pointer-events:none;transform:translateX(100%);transition:transform .38s cubic-bezier(.4,0,.2,1);align-items:flex-start;box-shadow:-8px 0 40px rgba(0,0,0,.5)}.navl.open{transform:translateX(0);pointer-events:auto}.navl li{width:100%;border-bottom:1px solid rgba(77,166,255,.07)}.navl li:last-child{border-bottom:none}.navl li:first-child{border-top:1px solid rgba(77,166,255,.07)}.navl a{font-size:1.05rem!important;padding:1rem 0!important;display:flex;align-items:center;gap:.6rem;letter-spacing:.06em;-webkit-tap-highlight-color:transparent;color:rgba(232,240,255,.8)!important;transition:color .2s,padding-left .2s!important}.navl a:hover,.navl a:active{color:#4da6ff!important;padding-left:.5rem!important}.navl .nctа{color:#4da6ff!important;border:none!important;background:rgba(77,166,255,.08)!important;border-radius:8px!important;padding:.6rem .8rem!important;margin-top:.3rem}.navl::before{content:'Menu';position:absolute;top:1.4rem;left:1.8rem;font-family:var(--fd);font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:.04em}.hphoto{width:170px;height:170px}.ring1{top:-10px;left:-10px;right:-10px;bottom:-10px}.ring2{top:-18px;left:-18px;right:-18px;bottom:-18px}.sec{padding:4.5rem 0}.gr2{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+.drag-handle{display:flex;flex-direction:column;gap:3px;padding:.6rem .5rem;cursor:grab;flex-shrink:0;opacity:.5;transition:opacity .2s}
+.drag-handle:hover{opacity:1}
+.drag-handle:active{cursor:grabbing;opacity:1}
+.drag-handle span{display:block;width:18px;height:2px;background:var(--blue);border-radius:2px}
+.cert-list-item{transition:box-shadow .2s,transform .15s,opacity .2s;cursor:default}
+.cert-list-item.dragging{opacity:.45;transform:scale(.97);box-shadow:0 8px 32px rgba(0,0,0,.4)!important;border-color:var(--blue)!important;z-index:100;position:relative}
+.cert-list-item.drag-over-top{border-top:2px solid var(--blue)!important}
+.cert-list-item.drag-over-bottom{border-bottom:2px solid var(--blue)!important}
+.reorder-btn{background:none;border:1px solid var(--bd);border-radius:6px;color:var(--m2);cursor:pointer;font-size:.8rem;padding:.25rem .45rem;transition:all .2s;line-height:1;flex-shrink:0}
+.reorder-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--pale)}
+.cursor-light{position:fixed;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,var(--glow) 0%,rgba(77,166,255,0) 70%);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.06s linear, opacity 0.3s;opacity:0;filter:blur(32px);will-change:transform}
+body.violet .cursor-light{background:radial-gradient(circle,rgba(3,105,161,0.28) 0%,rgba(3,105,161,0) 70%)}
+.steps-guide{background:var(--bg3);border-radius:12px;padding:1rem;margin-bottom:1rem;font-size:.85rem}
+.steps-guide summary{cursor:pointer;font-weight:600;color:var(--blue);margin-bottom:.5rem}
+.fb-status{display:inline-block;margin-left:1rem;padding:.2rem .6rem;border-radius:40px;font-size:.7rem;font-weight:600}
+.fb-status.on{background:rgba(61,220,132,.2);color:var(--ok)}
+.fb-status.off{background:rgba(255,92,92,.2);color:var(--err)}
+.toast-message{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) scale(0.9);background:var(--bg2);color:var(--ok);padding:10px 20px;border-radius:40px;font-size:.85rem;z-index:10000;opacity:0;transition:all .3s ease;pointer-events:none;border:1px solid var(--bd);box-shadow:0 4px 15px rgba(0,0,0,.3)}
+.toast-message.show{opacity:1;transform:translateX(-50%) scale(1)}
+.main-content{transition:transform 0.2s ease-out}
+/* ---- Inline color pickers ---- */
+.inline-color-row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.5rem}
+.inline-color-field{display:flex;align-items:center;gap:.4rem;background:var(--bg3);border:1px solid var(--bd);border-radius:9px;padding:.45rem .6rem}
+.inline-color-label{font-size:.67rem;color:var(--m2);white-space:nowrap;min-width:2.2rem}
+.inline-color-swatch{width:2rem;height:2rem;padding:.1rem;border-radius:6px;border:1px solid var(--bd);cursor:pointer;background:var(--bg4);flex-shrink:0}
+.inline-color-hex{flex:1;font-family:monospace;font-size:.76rem;padding:.3rem .5rem;margin:0;min-width:0}
+.inline-reset-btn{background:none;border:1px solid var(--bd);border-radius:6px;color:var(--m2);cursor:pointer;font-size:.85rem;padding:.2rem .45rem;transition:all .2s;flex-shrink:0;line-height:1}
+.inline-reset-btn:hover{border-color:var(--blue);color:var(--blue);background:var(--pale)}
+</style>
+</head>
+<body>
+<div class="cursor-light" id="cursorLight"></div>
+<div id="cg"></div>
+<nav id="nav"><div class="ni"><a href="#hero" class="logo">AB<em>.</em></a><ul class="navl" id="navl"></ul><div style="display:flex;align-items:center;gap:.5rem"><div style="position:relative"><button id="theme-btn" onclick="toggleThemeMenu(event)" style="background:none;border:1px solid var(--bd);border-radius:8px;padding:.42rem .75rem;cursor:pointer;color:var(--m2);display:flex;align-items:center;gap:.4rem"><span id="theme-icon">🌙</span><span id="theme-label" style="font-size:.75rem;letter-spacing:.03em">Dark</span><span id="auto-ind" style="font-size:.65rem;opacity:.6;margin-left:.3rem">(auto)</span></button><div id="theme-menu"><button class="theme-opt" onclick="applyTheme('dark',true)">🌙 Dark</button><button class="theme-opt" onclick="applyTheme('violet',true)">🌊 Ocean Blue</button><div style="height:1px;background:var(--bd);margin:.3rem 0"></div><button class="theme-opt" onclick="sessionStorage.removeItem('pf_theme_override');applyTheme(getAutoTheme(),false)" style="font-size:.76rem;opacity:.8">🖥️ Follow System Theme</button></div></div></div></div></nav>
+<button class="hbtn" id="hbtn" aria-label="Menu"><span></span><span></span><span></span></button>
+<div class="navl-backdrop" id="navl-backdrop" onclick="document.getElementById('navl').classList.remove('open');document.getElementById('hbtn').classList.remove('open');this.classList.remove('open');"></div>
+<div id="nav-peek"><button onclick="revealNav()">▾ Menu</button></div>
+<div id="nav-hover-zone"></div>
+
+<div class="main-content" id="mainContent">
+<section id="hero"><div class="hbg"><canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0"></canvas><div class="hgrid" id="hgrid" style="position:relative;z-index:1"></div><div class="hglow1"></div><div class="hglow2"></div></div><div class="hinner"><div class="hphoto-wrap"><div class="hphoto" id="hphoto"><div class="hphoto-placeholder" id="hph-placeholder"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span>Your Photo Here</span></div><img id="hphoto-img" src="" alt="Abhinav Bhardwaj"/></div><div class="ring1"></div><div class="ring2"></div></div><div class="htxt"><p class="heyebrow fup" id="s-eyebrow">Finance Professional · Delhi, India</p><h1 class="hname fup d1"><span id="s-first-name">Abhinav</span><br/><span id="s-name-accent" class="accent">Bhardwaj</span></h1><p class="htagline fup d2" id="s-tagline">BBA Finance Graduate &amp; Company Secretary (CS) Executive Student — turning numbers into strategic decisions.</p><div class="hbtns fup d3" id="hero-btns-wrap"></div></div></div><div class="scrollhint"><div class="scrollline"></div><span id="scroll-hint-text">SCROLL</span></div></section>
+
+<section id="about" class="sec"><div class="ct"><div class="slabel" id="sh-about-label">01 — About</div><div class="about-grid"><div class="about-bio rv"><h2 class="stitle" id="sh-about-title">Who is<br/><span class="accent" id="sh-about-accent">Abhinav Bhardwaj?</span></h2><p id="s-bio1">A motivated and ambitious BBA Finance graduate and Company Secretary (CS) Executive student, equipped with a solid foundation in financial analysis, Excel, Tally, and core corporate finance concepts. Skilled in interpreting financial statements, working with data, and applying practical insights to real-world scenarios.</p><p id="s-bio2">Deeply interested in how businesses grow, manage finances, and make strategic decisions. Actively involved in various college clubs and event planning, building strong communication, leadership, and organizational skills.</p></div><div class="trait-cards" id="trait-cards-wrap"></div></div></div></section>
+
+<section id="experience" class="sec secdark"><div class="ct"><div class="slabel rv" id="sh-experience-label">02 — Experience</div><h2 class="stitle rv" id="sh-experience-title">Work <span class="accent" id="sh-experience-accent">History</span></h2><div class="timeline" id="exp-timeline"></div></div></section>
+
+<section id="skills" class="sec"><div class="ct"><div class="slabel rv" id="sh-skills-label">03 — Skills</div><h2 class="stitle rv" id="sh-skills-title">Expertise <span class="accent" id="sh-skills-accent">&amp; Toolkit</span></h2><div class="skills-grid"><div class="rv"><div class="skill-gtitle">Finance &amp; Analysis</div><div class="sbars" id="finance-bars"></div></div><div class="rv d1"><div class="skill-gtitle">Tools &amp; Software</div><div class="tagcloud" id="tools-cloud" style="margin-bottom:1.8rem"></div><div class="skill-gtitle">Corporate Law</div><div class="tagcloud" id="law-cloud"></div></div></div></div></section>
+
+<section id="certifications" class="sec secdark"><div class="ct"><div class="slabel rv" id="sh-certifications-label">04 — Certifications</div><h2 class="stitle rv" id="sh-certifications-title">Credentials <span class="accent" id="sh-certifications-accent">&amp; Achievements</span></h2><div class="cert-grid" id="cert-grid"></div></div></section>
+
+<section id="education" class="sec"><div class="ct"><div class="slabel rv" id="sh-education-label">05 — Education</div><h2 class="stitle rv" id="sh-education-title">Academic <span class="accent" id="sh-education-accent">Journey</span></h2><div class="timeline" id="edu-timeline"></div></div></section>
+
+<section id="contact" class="sec"><div class="ct"><div class="slabel" id="sh-contact-label">07 — Contact</div><div class="contact-grid"><div class="rv"><h2 class="stitle" id="sh-contact-title">Let's <span class="accent" id="sh-contact-accent">Connect</span></h2><p id="contact-desc-text">Whether you have an opportunity, a question, or just want to say hello — always open to a conversation about finance, CS, or collaboration.</p><div class="contact-links" id="contact-links-wrap"></div></div><form class="cform rv d1" id="contact-form" onsubmit="submitForm(event)"><div class="fgroup"><label>Your Name</label><input type="text" name="name" id="cf-name" placeholder="John Doe" required/></div><div class="fgroup"><label>Email Address</label><input type="email" name="email" id="cf-email" placeholder="john@example.com" required/></div><div class="fgroup"><label>Message</label><textarea name="message" id="cf-message" rows="5" placeholder="Let's talk finance…" required></textarea></div><button type="submit" class="btn btno fw" id="submit-btn" style="justify-content:center;"><span style="position:relative;z-index:2;display:inline-flex;align-items:center;gap:.5rem"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Send Message</span></span><span style="position:absolute;inset:0;background:linear-gradient(135deg,#4da6ff,#1a5fa8);opacity:0;transition:opacity .35s;z-index:0;border-radius:inherit;pointer-events:none" class="hbfill"></span></button><p class="fnote" id="fnote"></p></form></div></div></section>
+
+<div id="custom-sections-wrap"></div>
+
+<footer><div class="ct foot-inner"><span class="foot-name" id="foot-name">Abhinav Bhardwaj</span><span class="foot-copy" id="foot-copy">© <span id="yr"></span> · All rights reserved</span><div class="foot-links" id="foot-links-wrap"><a href="#" onclick="openAdmin();return false" style="color:var(--m);font-size:.82rem">Admin</a></div></div></footer>
+</div>
+
+<div id="toastMsg" class="toast-message"></div>
+
+<div id="adm-overlay"><div id="adm-login" class="adm-login" ontouchstart="if(event.target===this)closeAdmin()" onclick="if(event.target===this)closeAdmin()"><div class="login-box"><div style="font-size:2rem;margin-bottom:.5rem">🔐</div><h2>Admin Panel</h2><p>Abhinav Bhardwaj Portfolio</p><div style="position:relative;margin-bottom:1rem"><input type="password" id="pw-input" placeholder="Enter password" onkeydown="if(event.key==='Enter')doLogin()" style="width:100%;padding:.82rem 2.8rem .82rem 1rem;background:var(--bg3);border:1px solid var(--bd);border-radius:9px;color:var(--w);font-family:var(--fb);font-size:.9rem;outline:none;transition:border-color .3s;box-sizing:border-box"/><button type="button" onclick="togglePwVis('pw-input',this)" style="position:absolute;right:.75rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--m2);font-size:1.1rem;padding:0;line-height:1">👁</button></div><button class="savebtn" style="width:100%" onclick="doLogin()">Sign In</button><p class="login-err" id="login-err"></p><p class="login-hint" id="login-hint-display">Hint: <span id="pw-hint-display">admin123</span></p></div></div><div id="adm-panel" style="display:none"><div class="adm-wrap"><div class="adm-header"><h2>Portfolio <em>Admin</em> – Complete Control</h2><div class="adm-header-right"><a href="#" onclick="closeAdmin();return false">← View Site</a><button class="delbtn" onclick="doLogout()">Logout</button></div></div><div class="adm-tabs"><button class="adm-tab on" onclick="swTab('hero',this)">🏠 Hero</button><button class="adm-tab" onclick="swTab('about',this)">👤 About</button><button class="adm-tab" onclick="swTab('exp',this)">💼 Experience</button><button class="adm-tab" onclick="swTab('edu',this)">🎓 Education</button><button class="adm-tab" onclick="swTab('skills',this)">🛠️ Skills</button><button class="adm-tab" onclick="swTab('certs',this)">📜 Certs</button><button class="adm-tab" onclick="swTab('general',this)">⚙️ General</button><button class="adm-tab" onclick="swTab('photo',this)">📷 Photo</button><button class="adm-tab" onclick="swTab('sections',this)">➕ Sections</button><button class="adm-tab" onclick="swTab('headings',this)">🔤 Headings</button><button class="adm-tab" onclick="swTab('colors',this)">🎨 Colors</button><button class="adm-tab" onclick="swTab('firebase',this)">🔥 Firebase Sync</button></div>
+
+<!-- Hero Tab -->
+<div class="adm-page on" id="adm-hero"><div class="acard"><div class="acard-title">Hero & Branding</div><input class="ainput" id="a-first-name" placeholder="First Name"><input class="ainput" id="a-last-name" placeholder="Last Name (accent)"><input class="ainput" id="a-logo-text" placeholder="Logo text"><input class="ainput" id="a-scroll-hint" placeholder="Scroll hint"><input class="ainput" id="a-eyebrow" placeholder="Eyebrow"><textarea class="ainput" id="a-tagline" rows="2" placeholder="Tagline"></textarea><button class="savebtn" onclick="saveHeroBrandingWithSync()">💾 Save & Sync</button></div><div class="acard"><div class="acard-title">Hero Buttons (drag to reorder/edit)</div><div id="hero-btns-admin" class="sortable-list"></div><div class="gr2"><input class="ainput" id="hb-label" placeholder="Label"><input class="ainput" id="hb-icon" placeholder="Icon name (e.g., linkedin, cv)"></div><input class="ainput" id="hb-url" placeholder="URL"><button class="savebtn" id="heroBtnSaveBtn" onclick="addHeroBtnWithSync()">+ Add Button & Sync</button></div></div>
+
+<!-- About Tab -->
+<div class="adm-page" id="adm-about">
+<div class="acard">
+  <div class="acard-title">Bio — Paragraph 1</div>
+  <textarea class="ainput" id="a-bio1" rows="4"></textarea>
+  <div class="inline-color-row">
+    <div class="inline-color-field">
+      <span class="inline-color-label">🌙 Dark color</span>
+      <input type="color" class="inline-color-swatch" id="ic-bio-p1-dark" oninput="document.getElementById('ic-bio-p1-dark-hex').value=this.value">
+      <input type="text" class="ainput inline-color-hex" id="ic-bio-p1-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-bio-p1-dark').value=this.value">
+      <button class="inline-reset-btn" onclick="resetInlineColor('bio','darkP1','#8090a8','ic-bio-p1-dark')" title="Reset to default">↺</button>
+    </div>
+    <div class="inline-color-field">
+      <span class="inline-color-label">🌊 Light color</span>
+      <input type="color" class="inline-color-swatch" id="ic-bio-p1-light" oninput="document.getElementById('ic-bio-p1-light-hex').value=this.value">
+      <input type="text" class="ainput inline-color-hex" id="ic-bio-p1-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-bio-p1-light').value=this.value">
+      <button class="inline-reset-btn" onclick="resetInlineColor('bio','lightP1','#1e4060','ic-bio-p1-light')" title="Reset to default">↺</button>
+    </div>
+  </div>
+  <button class="savebtn" style="margin-top:.6rem" onclick="saveInlineColor('bio',{'darkP1':'ic-bio-p1-dark','lightP1':'ic-bio-p1-light'});D.bio1=document.getElementById('a-bio1').value;saveAndSync();">💾 Save Paragraph 1 & Sync</button>
+</div>
+<div class="acard">
+  <div class="acard-title">Bio — Paragraph 2</div>
+  <textarea class="ainput" id="a-bio2" rows="4"></textarea>
+  <div class="inline-color-row">
+    <div class="inline-color-field">
+      <span class="inline-color-label">🌙 Dark color</span>
+      <input type="color" class="inline-color-swatch" id="ic-bio-p2-dark" oninput="document.getElementById('ic-bio-p2-dark-hex').value=this.value">
+      <input type="text" class="ainput inline-color-hex" id="ic-bio-p2-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-bio-p2-dark').value=this.value">
+      <button class="inline-reset-btn" onclick="resetInlineColor('bio','darkP2','#8090a8','ic-bio-p2-dark')" title="Reset to default">↺</button>
+    </div>
+    <div class="inline-color-field">
+      <span class="inline-color-label">🌊 Light color</span>
+      <input type="color" class="inline-color-swatch" id="ic-bio-p2-light" oninput="document.getElementById('ic-bio-p2-light-hex').value=this.value">
+      <input type="text" class="ainput inline-color-hex" id="ic-bio-p2-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-bio-p2-light').value=this.value">
+      <button class="inline-reset-btn" onclick="resetInlineColor('bio','lightP2','#1e4060','ic-bio-p2-light')" title="Reset to default">↺</button>
+    </div>
+  </div>
+  <button class="savebtn" style="margin-top:.6rem" onclick="saveInlineColor('bio',{'darkP2':'ic-bio-p2-dark','lightP2':'ic-bio-p2-light'});D.bio2=document.getElementById('a-bio2').value;saveAndSync();">💾 Save Paragraph 2 & Sync</button>
+</div>
+<div class="acard">
+  <div class="acard-title">Section Heading Color</div>
+  <div class="inline-color-row">
+    <div class="inline-color-field">
+      <span class="inline-color-label">🌙 Dark</span>
+      <input type="color" class="inline-color-swatch" id="ic-bio-h-dark" oninput="document.getElementById('ic-bio-h-dark-hex').value=this.value">
+      <input type="text" class="ainput inline-color-hex" id="ic-bio-h-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-bio-h-dark').value=this.value">
+      <button class="inline-reset-btn" onclick="resetInlineColor('bio','darkHeading','#eef2f8','ic-bio-h-dark')" title="Reset">↺</button>
+    </div>
+    <div class="inline-color-field">
+      <span class="inline-color-label">🌊 Light</span>
+      <input type="color" class="inline-color-swatch" id="ic-bio-h-light" oninput="document.getElementById('ic-bio-h-light-hex').value=this.value">
+      <input type="text" class="ainput inline-color-hex" id="ic-bio-h-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-bio-h-light').value=this.value">
+      <button class="inline-reset-btn" onclick="resetInlineColor('bio','lightHeading','#060f1e','ic-bio-h-light')" title="Reset">↺</button>
+    </div>
+  </div>
+  <button class="savebtn" style="margin-top:.6rem" onclick="saveInlineColor('bio',{'darkHeading':'ic-bio-h-dark','lightHeading':'ic-bio-h-light'});saveAndSync();">💾 Save Heading Color & Sync</button>
+</div>
+<div class="acard"><div class="acard-title">Trait Cards (drag to reorder/edit)</div><div id="trait-admin-list" class="sortable-list"></div><div class="gr2"><input class="ainput" id="nt-icon" placeholder="Icon"><input class="ainput" id="nt-title" placeholder="Title"></div><input class="ainput" id="nt-desc" placeholder="Description"><button class="savebtn" id="traitSaveBtn" onclick="addTraitWithSync()">+ Add Card & Sync</button></div>
+</div>
+
+<!-- Experience Tab -->
+<div class="adm-page" id="adm-exp"><div class="acard"><div class="acard-title">Experience (drag to reorder/edit)</div><div id="exp-admin-list" class="sortable-list"></div><div class="gr2"><input class="ainput" id="ne-year" placeholder="Year"><input class="ainput" id="ne-title" placeholder="Role"></div><input class="ainput" id="ne-org" placeholder="Organization"><textarea class="ainput" id="ne-points" rows="4" placeholder="Bullet points (one per line)&#10;Add expandable detail with pipe: &#10;Core Finance Team | Led cross-functional analysis across 3 departments&#10;(hover arrow expands the detail)"></textarea><div style="font-size:.72rem;color:var(--m2);margin-bottom:.6rem;padding:.5rem .7rem;background:var(--pale);border-radius:7px;line-height:1.6">💡 <strong>Expandable bullets:</strong> Add <code style="background:var(--bg4);padding:.1rem .35rem;border-radius:4px;font-size:.78rem">Main point | Expanded detail here</code> — the <strong>›</strong> arrow will expand on hover/click if detail exists.</div><button class="savebtn" id="expSaveBtn" onclick="addExperienceWithSync()">Add Entry & Sync</button></div>
+<div class="acard" style="margin-top:1rem"><div class="acard-title" style="font-size:.78rem;margin-bottom:.8rem">🎨 Experience Colors</div>
+  <div style="font-size:.75rem;color:var(--m2);margin-bottom:.4rem">Section heading</div>
+  <div class="inline-color-row"><div class="inline-color-field"><span class="inline-color-label">🌙</span><input type="color" class="inline-color-swatch" id="ic-exp-h-dark" oninput="document.getElementById('ic-exp-h-dark-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-exp-h-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-exp-h-dark').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('experience','darkHeading','#eef2f8','ic-exp-h-dark')">↺</button></div><div class="inline-color-field"><span class="inline-color-label">🌊</span><input type="color" class="inline-color-swatch" id="ic-exp-h-light" oninput="document.getElementById('ic-exp-h-light-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-exp-h-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-exp-h-light').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('experience','lightHeading','#060f1e','ic-exp-h-light')">↺</button></div></div>
+  <div style="font-size:.75rem;color:var(--m2);margin:.7rem 0 .4rem">Body text (roles, dates, bullets)</div>
+  <div class="inline-color-row"><div class="inline-color-field"><span class="inline-color-label">🌙</span><input type="color" class="inline-color-swatch" id="ic-exp-b-dark" oninput="document.getElementById('ic-exp-b-dark-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-exp-b-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-exp-b-dark').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('experience','darkBody','#8090a8','ic-exp-b-dark')">↺</button></div><div class="inline-color-field"><span class="inline-color-label">🌊</span><input type="color" class="inline-color-swatch" id="ic-exp-b-light" oninput="document.getElementById('ic-exp-b-light-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-exp-b-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-exp-b-light').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('experience','lightBody','#1e4060','ic-exp-b-light')">↺</button></div></div>
+  <button class="savebtn" style="margin-top:.8rem" onclick="saveInlineColor('experience',{'darkHeading':'ic-exp-h-dark','lightHeading':'ic-exp-h-light','darkBody':'ic-exp-b-dark','lightBody':'ic-exp-b-light'});saveAndSync();">💾 Save Experience Colors & Sync</button>
+</div></div>
+
+<!-- Education Tab -->
+<div class="adm-page" id="adm-edu">
+<div class="acard"><div class="acard-title">Education (drag to reorder/edit)</div><div id="edu-admin-list" class="sortable-list"></div><div class="gr2"><input class="ainput" id="ned-year" placeholder="Year"><input class="ainput" id="ned-type" placeholder="Type"></div><input class="ainput" id="ned-title" placeholder="Degree"><input class="ainput" id="ned-org" placeholder="Institution"><input class="ainput" id="ned-subs" placeholder="Subjects"><button class="savebtn" id="eduSaveBtn" onclick="addEducationWithSync()">Add Entry & Sync</button></div>
+<div class="acard" style="margin-top:1rem"><div class="acard-title" style="font-size:.78rem;margin-bottom:.8rem">🎨 Education Colors</div>
+  <div style="font-size:.75rem;color:var(--m2);margin-bottom:.7rem">Heading color</div>
+  <div class="inline-color-row">
+    <div class="inline-color-field"><span class="inline-color-label">🌙 Dark</span><input type="color" class="inline-color-swatch" id="ic-edu-h-dark" oninput="document.getElementById('ic-edu-h-dark-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-edu-h-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-edu-h-dark').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('education','darkHeading','#eef2f8','ic-edu-h-dark')">↺</button></div>
+    <div class="inline-color-field"><span class="inline-color-label">🌊 Light</span><input type="color" class="inline-color-swatch" id="ic-edu-h-light" oninput="document.getElementById('ic-edu-h-light-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-edu-h-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-edu-h-light').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('education','lightHeading','#060f1e','ic-edu-h-light')">↺</button></div>
+  </div>
+  <div style="font-size:.75rem;color:var(--m2);margin:.8rem 0 .5rem">Body text (degree, org, subjects)</div>
+  <div class="inline-color-row">
+    <div class="inline-color-field"><span class="inline-color-label">🌙 Dark</span><input type="color" class="inline-color-swatch" id="ic-edu-b-dark" oninput="document.getElementById('ic-edu-b-dark-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-edu-b-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-edu-b-dark').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('education','darkBody','#8090a8','ic-edu-b-dark')">↺</button></div>
+    <div class="inline-color-field"><span class="inline-color-label">🌊 Light</span><input type="color" class="inline-color-swatch" id="ic-edu-b-light" oninput="document.getElementById('ic-edu-b-light-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-edu-b-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-edu-b-light').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('education','lightBody','#1e4060','ic-edu-b-light')">↺</button></div>
+  </div>
+  <button class="savebtn" style="margin-top:.8rem" onclick="saveInlineColor('education',{'darkHeading':'ic-edu-h-dark','lightHeading':'ic-edu-h-light','darkBody':'ic-edu-b-dark','lightBody':'ic-edu-b-light'});saveAndSync();">💾 Save Education Colors & Sync</button>
+</div>
+</div>
+
+<!-- Skills Tab -->
+<div class="adm-page" id="adm-skills"><div class="acard"><div class="acard-title">Finance Skills (drag to reorder/edit %)</div><div id="finance-admin-list" class="sortable-list"></div><div class="gr2"><input class="ainput" id="nf-name" placeholder="Skill Name"><input class="ainput" id="nf-pct" placeholder="Percentage"></div><button class="savebtn" id="financeSaveBtn" onclick="addFinanceSkillWithSync()">Add Skill & Sync</button></div><div class="acard"><div class="acard-title">Tools (drag to reorder/edit highlight)</div><div id="tools-admin-list" class="sortable-list"></div><div class="gr2"><input class="ainput" id="nt-tool-name" placeholder="Tool"><select class="ainput" id="nt-tool-hi"><option value="0">Normal</option><option value="1">Highlight</option></select></div><button class="savebtn" id="toolSaveBtn" onclick="addToolSkillWithSync()">Add Tool & Sync</button></div><div class="acard"><div class="acard-title">Law Skills (drag to reorder/edit highlight)</div><div id="law-admin-list" class="sortable-list"></div><div class="gr2"><input class="ainput" id="nt-law-name" placeholder="Law concept"><select class="ainput" id="nt-law-hi"><option value="0">Normal</option><option value="1">Highlight</option></select></div><button class="savebtn" id="lawSaveBtn" onclick="addLawSkillWithSync()">Add Law Skill & Sync</button></div>
+<div class="acard" style="margin-top:1rem"><div class="acard-title" style="font-size:.78rem;margin-bottom:.8rem">🎨 Skills Colors</div>
+  <div style="font-size:.75rem;color:var(--m2);margin-bottom:.5rem">Section heading</div>
+  <div class="inline-color-row"><div class="inline-color-field"><span class="inline-color-label">🌙 Dark</span><input type="color" class="inline-color-swatch" id="ic-sk-h-dark" oninput="document.getElementById('ic-sk-h-dark-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-sk-h-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-sk-h-dark').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('skills','darkHeading','#eef2f8','ic-sk-h-dark')">↺</button></div><div class="inline-color-field"><span class="inline-color-label">🌊 Light</span><input type="color" class="inline-color-swatch" id="ic-sk-h-light" oninput="document.getElementById('ic-sk-h-light-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-sk-h-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-sk-h-light').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('skills','lightHeading','#060f1e','ic-sk-h-light')">↺</button></div></div>
+  <div style="font-size:.75rem;color:var(--m2);margin:.8rem 0 .5rem">Skill labels & category titles</div>
+  <div class="inline-color-row"><div class="inline-color-field"><span class="inline-color-label">🌙 Dark</span><input type="color" class="inline-color-swatch" id="ic-sk-t-dark" oninput="document.getElementById('ic-sk-t-dark-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-sk-t-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-sk-t-dark').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('skills','darkSkillText','#8090a8','ic-sk-t-dark')">↺</button></div><div class="inline-color-field"><span class="inline-color-label">🌊 Light</span><input type="color" class="inline-color-swatch" id="ic-sk-t-light" oninput="document.getElementById('ic-sk-t-light-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-sk-t-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-sk-t-light').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('skills','lightSkillText','#1e4060','ic-sk-t-light')">↺</button></div></div>
+  <div style="font-size:.75rem;color:var(--m2);margin:.8rem 0 .5rem">Highlighted tag border color</div>
+  <div class="inline-color-row"><div class="inline-color-field"><span class="inline-color-label">🌙 Dark</span><input type="color" class="inline-color-swatch" id="ic-sk-hb-dark" oninput="document.getElementById('ic-sk-hb-dark-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-sk-hb-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-sk-hb-dark').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('skills','darkHiBorder','#4da6ff','ic-sk-hb-dark')">↺</button></div><div class="inline-color-field"><span class="inline-color-label">🌊 Light</span><input type="color" class="inline-color-swatch" id="ic-sk-hb-light" oninput="document.getElementById('ic-sk-hb-light-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-sk-hb-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-sk-hb-light').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('skills','lightHiBorder','#0369a1','ic-sk-hb-light')">↺</button></div></div>
+  <button class="savebtn" style="margin-top:.8rem" onclick="saveInlineColor('skills',{'darkHeading':'ic-sk-h-dark','lightHeading':'ic-sk-h-light','darkSkillText':'ic-sk-t-dark','lightSkillText':'ic-sk-t-light','darkHiBorder':'ic-sk-hb-dark','lightHiBorder':'ic-sk-hb-light'});saveAndSync();">💾 Save Skills Colors & Sync</button>
+</div></div>
+
+<!-- Certifications Tab -->
+<div class="adm-page" id="adm-certs"><div class="acard"><div class="acard-title">Certifications (drag to reorder/edit)</div><div id="cert-admin-list" class="sortable-list"></div><div class="gr2"><input class="ainput" id="nc-icon" placeholder="Icon (📜)"><input class="ainput" id="nc-name" placeholder="Certification Name"></div><input class="ainput" id="nc-issuer" placeholder="Issuer"><input class="ainput" id="nc-year" placeholder="Year"><input class="ainput" id="nc-link" placeholder="Link (URL)"><textarea class="ainput" id="nc-desc" rows="2" placeholder="Description (optional)"></textarea><button class="savebtn" id="certSaveBtn" onclick="addCertWithSync()">+ Add Certification & Sync</button></div>
+<div class="acard" style="margin-top:1rem"><div class="acard-title" style="font-size:.78rem;margin-bottom:.8rem">🎨 Certifications Colors</div>
+  <div style="font-size:.75rem;color:var(--m2);margin-bottom:.4rem">Cert name</div>
+  <div class="inline-color-row"><div class="inline-color-field"><span class="inline-color-label">🌙</span><input type="color" class="inline-color-swatch" id="ic-ct-n-dark" oninput="document.getElementById('ic-ct-n-dark-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-ct-n-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-ct-n-dark').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('certifications','darkName','#eef2f8','ic-ct-n-dark')">↺</button></div><div class="inline-color-field"><span class="inline-color-label">🌊</span><input type="color" class="inline-color-swatch" id="ic-ct-n-light" oninput="document.getElementById('ic-ct-n-light-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-ct-n-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-ct-n-light').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('certifications','lightName','#060f1e','ic-ct-n-light')">↺</button></div></div>
+  <div style="font-size:.75rem;color:var(--m2);margin:.7rem 0 .4rem">Issuer</div>
+  <div class="inline-color-row"><div class="inline-color-field"><span class="inline-color-label">🌙</span><input type="color" class="inline-color-swatch" id="ic-ct-i-dark" oninput="document.getElementById('ic-ct-i-dark-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-ct-i-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-ct-i-dark').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('certifications','darkIssuer','#4da6ff','ic-ct-i-dark')">↺</button></div><div class="inline-color-field"><span class="inline-color-label">🌊</span><input type="color" class="inline-color-swatch" id="ic-ct-i-light" oninput="document.getElementById('ic-ct-i-light-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-ct-i-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-ct-i-light').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('certifications','lightIssuer','#0369a1','ic-ct-i-light')">↺</button></div></div>
+  <div style="font-size:.75rem;color:var(--m2);margin:.7rem 0 .4rem">Description</div>
+  <div class="inline-color-row"><div class="inline-color-field"><span class="inline-color-label">🌙</span><input type="color" class="inline-color-swatch" id="ic-ct-d-dark" oninput="document.getElementById('ic-ct-d-dark-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-ct-d-dark-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-ct-d-dark').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('certifications','darkDesc','#8090a8','ic-ct-d-dark')">↺</button></div><div class="inline-color-field"><span class="inline-color-label">🌊</span><input type="color" class="inline-color-swatch" id="ic-ct-d-light" oninput="document.getElementById('ic-ct-d-light-hex').value=this.value"><input type="text" class="ainput inline-color-hex" id="ic-ct-d-light-hex" maxlength="7" oninput="if(/^#[0-9a-fA-F]{6}$/.test(this.value))document.getElementById('ic-ct-d-light').value=this.value"><button class="inline-reset-btn" onclick="resetInlineColor('certifications','lightDesc','#1e4060','ic-ct-d-light')">↺</button></div></div>
+  <button class="savebtn" style="margin-top:.8rem" onclick="saveInlineColor('certifications',{'darkName':'ic-ct-n-dark','lightName':'ic-ct-n-light','darkIssuer':'ic-ct-i-dark','lightIssuer':'ic-ct-i-light','darkDesc':'ic-ct-d-dark','lightDesc':'ic-ct-d-light'});saveAndSync();">💾 Save Cert Colors & Sync</button>
+</div></div>
+
+<!-- General Tab -->
+<div class="adm-page" id="adm-general"><div class="acard"><div class="acard-title">Contact Description</div><textarea class="ainput" id="a-contact-desc" rows="2"></textarea><button class="savebtn" onclick="saveGeneralWithSync()">💾 Save & Sync</button></div><div class="acard"><div class="acard-title">Form Action URL</div><input class="ainput" id="a-form-action" placeholder="https://formspree.io/f/your-endpoint"><button class="savebtn" onclick="saveGeneralWithSync()">💾 Save Form URL & Sync</button></div><div class="acard"><div class="acard-title">Footer</div><input class="ainput" id="f-name" placeholder="Footer Name"><input class="ainput" id="f-copy" placeholder="Copyright text"><button class="savebtn" onclick="saveFooterWithSync()">💾 Save Footer & Sync</button></div><div class="acard"><div class="acard-title">Photo Placeholder Text</div><input class="ainput" id="a-photo-placeholder" placeholder="Your Photo Here"><button class="savebtn" onclick="savePhotoPlaceholderWithSync()">💾 Save & Sync</button></div><div class="acard"><div class="acard-title">Contact Links (drag to reorder/edit) – custom icon & label</div><div id="contact-links-admin" class="sortable-list"></div><div class="gr2"><input class="ainput" id="cl-label" placeholder="Label"><input class="ainput" id="cl-icon" placeholder="Icon name (e.g., linkedin, discord)"></div><input class="ainput" id="cl-url" placeholder="URL"><button class="savebtn" id="contactLinkSaveBtn" onclick="addContactLinkWithSync()">+ Add Link & Sync</button></div><div class="acard"><div class="acard-title">🔐 Change Admin Password</div><input type="password" class="ainput" id="new-password" placeholder="New password (min 4 chars)"><input type="password" class="ainput" id="confirm-password" placeholder="Confirm new password"><button class="savebtn" onclick="changeAdminPassword()">Update Password</button><p class="albl" style="font-size:.7rem; margin-top:.2rem">Current default: admin123. After change, use the new password to log in.</p></div><div class="acard"><div class="acard-title">🔑 Login Window Hint</div><input class="ainput" id="login-hint-text" placeholder="Custom hint message"><button class="savebtn" onclick="saveLoginHintWithSync()">Save Hint & Sync</button></div></div>
+
+<!-- Photo Tab -->
+<div class="adm-page" id="adm-photo">
+  <div class="acard">
+    <div class="acard-title">📸 Profile Photo</div>
+
+    <!-- Step 1: Upload -->
+    <div style="margin-bottom:1rem">
+      <label class="albl">Step 1 — Choose Image</label>
+      <input type="file" id="photo-file-input" accept="image/*" class="ainput" style="padding:.55rem;cursor:pointer" onchange="initCropper(this)">
+    </div>
+
+    <!-- Step 2: Interactive Crop Editor -->
+    <div id="crop-editor" style="display:none">
+      <label class="albl">Step 2 — Drag & Zoom to Adjust Crop</label>
+      <div style="position:relative;width:100%;max-width:360px;margin:0 auto">
+        <!-- Crop viewport -->
+        <div id="crop-viewport" style="width:280px;height:280px;border-radius:50%;overflow:hidden;margin:0 auto;border:2px solid var(--blue);box-shadow:0 0 0 9999px rgba(0,0,0,.55);position:relative;cursor:grab;user-select:none;touch-action:none">
+          <canvas id="photo-crop-canvas" style="position:absolute;top:0;left:0;image-rendering:auto"></canvas>
+        </div>
+      </div>
+
+      <!-- Zoom slider -->
+      <div style="margin-top:1.2rem;display:flex;align-items:center;gap:.8rem">
+        <span style="font-size:.78rem;color:var(--m2)">🔍</span>
+        <input type="range" id="crop-zoom" min="1" max="4" step="0.01" value="1" style="flex:1;accent-color:var(--blue)" oninput="cropDraw()">
+        <span style="font-size:.78rem;color:var(--m2)">🔎</span>
+      </div>
+
+      <!-- Preview -->
+      <div style="margin-top:1.4rem;display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap">
+        <div>
+          <div style="font-size:.72rem;color:var(--m2);margin-bottom:.4rem;text-align:center">Preview (large)</div>
+          <canvas id="preview-lg" width="90" height="90" style="border-radius:50%;border:2px solid var(--bd2);display:block"></canvas>
+        </div>
+        <div>
+          <div style="font-size:.72rem;color:var(--m2);margin-bottom:.4rem;text-align:center">Preview (small)</div>
+          <canvas id="preview-sm" width="40" height="40" style="border-radius:50%;border:2px solid var(--bd2);display:block"></canvas>
+        </div>
+        <div style="font-size:.8rem;color:var(--m2);line-height:1.7">
+          <b style="color:var(--w)">Tips:</b><br>
+          🖱️ Drag to reposition<br>
+          🔍 Slider to zoom<br>
+          📱 Pinch on mobile
+        </div>
+      </div>
+
+      <button class="savebtn" style="margin-top:1.2rem" onclick="saveCroppedPhotoWithSync()">✅ Apply Photo & Sync</button>
+      <button class="savebtn" style="margin-top:.5rem;background:var(--bg3);color:var(--m2);border:1px solid var(--bd);box-shadow:none" onclick="resetCropper()">🔄 Choose Different Photo</button>
+    </div>
+  </div>
+</div>
+
+<!-- Custom Sections Tab -->
+<div class="adm-page" id="adm-sections"><div class="acard"><div class="acard-title">Custom Sections (drag to reorder/edit)</div><div id="sections-admin-list" class="sortable-list"></div><div class="adm-hr"></div><input class="ainput" id="ns-sec-title" placeholder="Section Title"><input class="ainput" id="ns-sec-label" placeholder="Label (optional)"><select class="ainput" id="ns-sec-type"><option>paragraph</option><option>bullets</option><option>cards</option></select><textarea class="ainput" id="ns-sec-body" rows="4" placeholder="Content..."></textarea><button class="savebtn" id="sectionSaveBtn" onclick="addCustomSectionWithSync()">+ Add Section & Sync</button></div></div>
+
+<!-- Headings Tab -->
+<div class="adm-page" id="adm-headings"><div class="acard"><div class="acard-title">Section Headings</div><div style="display:grid;gap:1rem"><label>About Label</label><input class="ainput" id="h-about-label"><label>About Title</label><input class="ainput" id="h-about-title"><label>About Accent</label><input class="ainput" id="h-about-accent"><label>Experience Label</label><input class="ainput" id="h-exp-label"><label>Experience Title</label><input class="ainput" id="h-exp-title"><label>Experience Accent</label><input class="ainput" id="h-exp-accent"><label>Skills Label</label><input class="ainput" id="h-skills-label"><label>Skills Title</label><input class="ainput" id="h-skills-title"><label>Skills Accent</label><input class="ainput" id="h-skills-accent"><label>Certs Label</label><input class="ainput" id="h-certs-label"><label>Certs Title</label><input class="ainput" id="h-certs-title"><label>Certs Accent</label><input class="ainput" id="h-certs-accent"><label>Education Label</label><input class="ainput" id="h-edu-label"><label>Education Title</label><input class="ainput" id="h-edu-title"><label>Education Accent</label><input class="ainput" id="h-edu-accent"><label>Contact Label</label><input class="ainput" id="h-contact-label"><label>Contact Title</label><input class="ainput" id="h-contact-title"><label>Contact Accent</label><input class="ainput" id="h-contact-accent"></div><button class="savebtn" onclick="saveHeadingsWithSync()">💾 Save Headings & Sync</button></div></div>
+
+<!-- Colors Tab -->
+<div class="adm-page" id="adm-colors">
+  <div style="margin-bottom:1rem;padding:.75rem 1rem;background:var(--pale);border:1px solid var(--bd2);border-radius:10px;font-size:.82rem;color:var(--w2)">
+    💡 Each section has its own <strong>dark 🌙 & light 🌊</strong> colour pickers. Hit <strong>Save & Sync</strong> inside any section to push just that section to Firebase instantly. New custom sections appear here automatically.
+  </div>
+  <div id="colors-sections-wrap"></div>
+  <button class="savebtn" style="margin-top:.5rem;background:var(--bg3);color:var(--m2);border:1px solid var(--bd)" onclick="resetColorsWithSync()">🔄 Reset ALL to Default & Sync</button>
+</div>
+
+<!-- Firebase Tab -->
+<div class="adm-page" id="adm-firebase"><div class="acard">
+<div class="acard-title">🔥 Firebase Real-time Sync</div>
+
+<div style="display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem;padding:.75rem 1rem;background:var(--bg4);border-radius:10px;border:1px solid var(--bd)">
+  <span id="fbConnectionStatus" class="fb-status off">⚡ Not connected</span>
+  <span id="autoSyncBadge" style="font-size:.7rem;margin-left:auto;color:var(--m2)">⚙️ Auto-sync ON</span>
+</div>
+
+<details class="steps-guide" style="margin-bottom:1.2rem;background:linear-gradient(135deg,rgba(255,165,0,.08),rgba(255,165,0,.03));border:1px solid rgba(255,165,0,.3);border-radius:12px">
+  <summary style="cursor:pointer;font-size:.9rem;font-weight:700;color:#f59e0b;padding:.1rem 0">⚡ Quick Connect — Paste your Firebase config here</summary>
+  <div style="margin-top:1rem">
+    <p style="font-size:.8rem;color:var(--m2);margin-bottom:.7rem;line-height:1.6">Paste your entire Firebase config code below (the whole block from Firebase Console). It will automatically fill all the fields for you.</p>
+    <textarea id="fb-paste-config" class="ainput" rows="10" style="font-family:monospace;font-size:.75rem;line-height:1.6;background:var(--bg2)" placeholder='Paste your Firebase config here, e.g.:
+
+const firebaseConfig = {
+  apiKey: "AIzaSy...",
+  authDomain: "yourapp.firebaseapp.com",
+  projectId: "your-project-id",
+  storageBucket: "yourapp.appspot.com",
+  messagingSenderId: "123456789",
+  appId: "1:123:web:abc..."
+};'></textarea>
+    <div style="display:flex;gap:.7rem;margin-top:.8rem">
+      <button class="savebtn" style="flex:1;background:linear-gradient(135deg,#f59e0b,#d97706)" onclick="parseAndFillFirebaseConfig()">🪄 Auto-Fill Fields from Paste</button>
+      <button class="savebtn" style="flex:2" onclick="parseAndFillFirebaseConfig(true)">⚡ Auto-Fill & Connect Now</button>
+    </div>
+    <div id="fb-paste-result" style="display:none;margin-top:.7rem;padding:.6rem .9rem;border-radius:9px;font-size:.8rem"></div>
+  </div>
+</details>
+
+<details class="steps-guide" style="margin-bottom:1.2rem">
+  <summary style="cursor:pointer;font-size:.85rem;font-weight:600;color:var(--blue)">📘 How to connect Firebase (step-by-step)</summary>
+  <div style="margin-top:.8rem;font-size:.82rem;line-height:2;color:var(--m2)">
+    <b>1.</b> Go to <a href="https://console.firebase.google.com" target="_blank" style="color:var(--blue)">console.firebase.google.com</a><br>
+    <b>2.</b> Create a new project (or open existing)<br>
+    <b>3.</b> Click <strong>Build → Firestore Database → Create database</strong> → choose <strong>Test mode</strong><br>
+    <b>4.</b> Go to <strong>Project Settings ⚙️ → Your apps → Add app → Web (&lt;/&gt;)</strong><br>
+    <b>5.</b> Copy the <code style="background:var(--bg4);padding:.1rem .35rem;border-radius:4px">firebaseConfig</code> values and paste below<br>
+    <b>6.</b> Click <strong>🔌 Connect</strong> — you'll see ✅ Connected if it works<br>
+    <b>7.</b> Click <strong>⬆️ Push All Data</strong> to upload your portfolio to the cloud<br>
+    <span style="color:var(--ok)">✅ After that, every edit auto-syncs instantly if Auto-sync is ON</span>
+  </div>
+</details>
+
+<div style="display:grid;gap:.6rem;margin-bottom:1rem">
+  <div><div class="albl">API Key <span style="color:var(--err)">*</span></div><input class="ainput" id="fb-apiKey" placeholder="AIzaSy..." style="font-family:monospace;font-size:.82rem"></div>
+  <div><div class="albl">Auth Domain <span style="color:var(--err)">*</span></div><input class="ainput" id="fb-authDomain" placeholder="yourapp.firebaseapp.com" style="font-family:monospace;font-size:.82rem"></div>
+  <div><div class="albl">Project ID <span style="color:var(--err)">*</span></div><input class="ainput" id="fb-projectId" placeholder="your-project-id" style="font-family:monospace;font-size:.82rem"></div>
+  <div class="gr2">
+    <div><div class="albl">Storage Bucket</div><input class="ainput" id="fb-storageBucket" placeholder="yourapp.appspot.com" style="font-family:monospace;font-size:.82rem"></div>
+    <div><div class="albl">Messaging Sender ID</div><input class="ainput" id="fb-messagingSenderId" placeholder="123456789" style="font-family:monospace;font-size:.82rem"></div>
+  </div>
+  <div><div class="albl">App ID</div><input class="ainput" id="fb-appId" placeholder="1:123:web:abc..." style="font-family:monospace;font-size:.82rem"></div>
+</div>
+
+<div id="fb-error-box" style="display:none;background:rgba(220,50,50,.1);border:1px solid rgba(220,50,50,.3);border-radius:9px;padding:.75rem 1rem;margin-bottom:1rem;font-size:.8rem;color:#ff7070;font-family:monospace;line-height:1.6;word-break:break-all"></div>
+
+<div style="display:flex;gap:.7rem;flex-wrap:wrap">
+  <button class="savebtn" style="flex:1;min-width:140px" onclick="connectFirebase()">🔌 Connect to Firebase</button>
+  <button class="savebtn" style="flex:1;min-width:140px;background:var(--blue2)" onclick="pushToFirebase()">⬆️ Push All Data</button>
+  <button class="savebtn" style="flex:1;min-width:140px;background:linear-gradient(135deg,#1e8c45,#166534)" onclick="pullFromFirebase()">⬇️ Pull from Firebase</button>
+</div>
+
+<div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--bd)">
+  <label style="display:flex;align-items:center;gap:.7rem;cursor:pointer">
+    <input type="checkbox" id="autoSyncToggle" checked style="width:16px;height:16px;accent-color:var(--blue)">
+    <span style="font-size:.85rem">Auto-sync after every change <span style="color:var(--m2);font-size:.75rem">(recommended — keeps Firebase always up to date)</span></span>
+  </label>
+</div>
+
+<div class="adm-hr"></div>
+<div style="font-size:.78rem;color:var(--m2);line-height:1.7">
+  📄 Data path: <code style="background:var(--bg4);padding:.1rem .4rem;border-radius:5px">portfolio_data / main</code><br>
+  ⚠️ <strong>Push</strong> overwrites cloud with local. <strong>Pull</strong> overwrites local with cloud.<br>
+  🔒 Make sure Firestore Security Rules are in <strong>Test Mode</strong> or allow read/write.
+</div>
+
+</div></div>
+</div></div></div>
+
+<script>
+// ========== FULL DATA MODEL ==========
+let D = {};
+let certEditIndex = null, heroEditIndex = null, traitEditIndex = null, expEditIndex = null, eduEditIndex = null, finEditIdx = null, toolEditIdx = null, lawEditIdx = null, contactLinkEditIndex = null, sectionEditIndex = null;
+let firebaseApp = null, firestore = null;
+let ADMIN_PASSWORD = "admin123";
+
+const DEFAULTS = {
+  firstName:"Abhinav", lastNameAccent:"Bhardwaj", logoText:"AB", scrollHint:"SCROLL", contactDesc:"Whether you have an opportunity, a question, or just want to say hello — always open to a conversation about finance, CS, or collaboration.", photoPlaceholder:"Your Photo Here",
+  eyebrow:"Finance Professional · Delhi, India", tagline:"BBA Finance Graduate & Company Secretary (CS) Executive Student — turning numbers into strategic decisions.",
+  bio1:"A motivated and ambitious BBA Finance graduate and Company Secretary (CS) Executive student, equipped with a solid foundation in financial analysis, Excel, Tally, and core corporate finance concepts. Skilled in interpreting financial statements, working with data, and applying practical insights to real-world scenarios.",
+  bio2:"Deeply interested in how businesses grow, manage finances, and make strategic decisions. Actively involved in various college clubs and event planning, building strong communication, leadership, and organizational skills.",
+  heroButtons:[{icon:"linkedin",label:"LinkedIn",url:"https://linkedin.com/in/abhinav-bhardwaj-finance/"}],
+  contactLinks:[{icon:"linkedin",label:"LinkedIn",url:"https://linkedin.com/in/abhinav-bhardwaj-finance/"},{icon:"email",label:"abhinav@example.com",url:"mailto:abhinav@example.com"}],
+  footerName:"Abhinav Bhardwaj", footerCopy:"All rights reserved",
+  financeSkills:[{name:"Financial Analysis",pct:90},{name:"Ratio Analysis",pct:88},{name:"Balance Sheet Interpretation",pct:85},{name:"Capital Markets (CS level)",pct:80},{name:"DCF Modeling",pct:72}],
+  traitCards:[{icon:"💡",title:"Problem Solver",desc:"Transforms complex financial data into clear, actionable insights."},{icon:"🔍",title:"Critical Thinker",desc:"Analytical approach to evaluating business decisions and market trends."},{icon:"📊",title:"3+ Internships",desc:"Hands-on experience across finance, outreach, and campus leadership roles."}],
+  toolSkills:[{name:"MS Excel Advanced",hi:true},{name:"Tally ERP 9",hi:false},{name:"Power BI",hi:true},{name:"MySQL Basic",hi:false}],
+  lawSkills:[{name:"Company Law",hi:false},{name:"Corporate Governance",hi:true},{name:"Securities Laws",hi:false}],
+  experience:[{year:"2024",title:"Core Finance Intern",org:"JK Fenner India Ltd.",points:"Conducted inter-firm comparisons and industry benchmarking\nAnalyzed balance sheets, P&L statements, and cash flow reports\nDeveloped Excel-based financial summaries and ratio reports"},{year:"2023",title:"Campus Executive",org:"IIT Bombay",points:"Represented IIT Bombay outreach division at GIBS Delhi campus\nPromoted technical and management workshops to students"}],
+  education:[{year:"2022–2025",type:"Undergraduate",title:"BBA Finance",org:"GIBS, Guru Gobind Singh Indraprastha University, Delhi",subjects:"Financial Management · Corporate Finance · Business Law · Financial Modeling · Investment Analysis"},{year:"2023–Present",type:"Professional Course",title:"CS Executive Level",org:"Institute of Company Secretaries of India (ICSI)",subjects:"Company Law · Securities Laws · Economic & Commercial Laws · Taxation"}],
+  certifications:[{icon:"📜",name:"SEBI Investor Certification",issuer:"SEBI",year:"2024",link:"#",desc:"Certified in capital market fundamentals"},{icon:"🏆",name:"Effective Leadership Programme",issuer:"JK Fenner India Ltd.",year:"2024",link:"#",desc:"Leadership and team management workshop"}],
+  customSections:[], photoData:"", formAction:"",
+  colors:{
+    bio:{ darkHeading:"#eef2f8", lightHeading:"#060f1e", darkP1:"#8090a8", lightP1:"#1e4060", darkP2:"#8090a8", lightP2:"#1e4060" },
+    experience:{ darkHeading:"#eef2f8", lightHeading:"#060f1e", darkBody:"#8090a8", lightBody:"#1e4060" },
+    skills:{ darkHeading:"#eef2f8", lightHeading:"#060f1e", darkSkillText:"#8090a8", lightSkillText:"#1e4060", darkHiBorder:"#4da6ff", lightHiBorder:"#0369a1", darkHiGlow:"rgba(77,166,255,0.45)", lightHiGlow:"rgba(3,105,161,0.35)" },
+    certifications:{ darkHeading:"#eef2f8", lightHeading:"#060f1e", darkName:"#eef2f8", lightName:"#060f1e", darkIssuer:"#4da6ff", lightIssuer:"#0369a1", darkDesc:"#8090a8", lightDesc:"#1e4060" },
+    education:{ darkHeading:"#eef2f8", lightHeading:"#060f1e", darkBody:"#8090a8", lightBody:"#1e4060" },
+    contact:{ darkHeading:"#eef2f8", lightHeading:"#060f1e", darkDesc:"#8090a8", lightDesc:"#1e4060" },
+    customSections:{}
+  },
+  sectionHeadings:{about:{label:"01 — About",title:"Who is",accent:"Abhinav Bhardwaj?"},experience:{label:"02 — Experience",title:"Work",accent:"History"},skills:{label:"03 — Skills",title:"Expertise",accent:"& Toolkit"},certifications:{label:"04 — Certifications",title:"Credentials",accent:"& Achievements"},education:{label:"05 — Education",title:"Academic",accent:"Journey"},contact:{label:"07 — Contact",title:"Let's",accent:"Connect"}},
+  loginHint:"admin123"
+};
+
+function loadD(){ let s=localStorage.getItem("pf_full_data"); D=s?{...DEFAULTS,...JSON.parse(s)}:{...DEFAULTS}; D.certifications.forEach(c=>{ if(c.desc===undefined) c.desc=""; }); if(D.formAction===undefined) D.formAction=""; if(!D.colors||typeof D.colors.bio!=="object"){ D.colors=JSON.parse(JSON.stringify(DEFAULTS.colors)); } else { for(let k of Object.keys(DEFAULTS.colors)){ if(!D.colors[k]) D.colors[k]={...DEFAULTS.colors[k]}; } if(!D.colors.customSections) D.colors.customSections={}; } if(D.loginHint===undefined) D.loginHint="admin123"; let savedPw=localStorage.getItem("admin_password"); if(savedPw) ADMIN_PASSWORD=savedPw; document.getElementById("login-hint-display").innerHTML=`Hint: ${D.loginHint}`; }
+function showToast(msg, isError=false){ let t=document.getElementById("toastMsg"); t.innerText=msg; t.style.color=isError?"var(--err)":"var(--ok)"; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"),3000); }
+async function syncToFirebase(showMsg=true){ if(!firestore){ if(showMsg) showToast("Firebase not connected – data saved locally only", true); return false; } try{ await firestore.collection("portfolio_data").doc("main").set({data:D,updatedAt:new Date()}); if(showMsg) showToast("✅ Data synced to Firebase!"); return true; }catch(e){ if(showMsg) showToast("❌ Firebase sync failed: "+e.message, true); return false; } }
+function saveAndSync(){ saveD(); if(document.getElementById("autoSyncToggle")?.checked) syncToFirebase(true); else showToast("Changes saved locally. Auto-sync is off.", false); }
+function saveD(){ localStorage.setItem("pf_full_data",JSON.stringify(D)); renderAll(); }
+
+function renderAll(){
+  document.getElementById("s-first-name").innerText=D.firstName; document.getElementById("s-name-accent").innerText=D.lastNameAccent;
+  document.querySelector(".logo").innerHTML=(D.logoText||"AB")+"<em>.</em>"; document.getElementById("scroll-hint-text").innerText=D.scrollHint;
+  document.getElementById("contact-desc-text").innerText=D.contactDesc; document.getElementById("s-eyebrow").innerText=D.eyebrow; document.getElementById("s-tagline").innerText=D.tagline;
+  document.getElementById("s-bio1").innerText=D.bio1; document.getElementById("s-bio2").innerText=D.bio2; document.getElementById("foot-name").innerText=D.footerName; document.getElementById("foot-copy").innerHTML=`© ${new Date().getFullYear()} · ${D.footerCopy}`;
+  document.querySelector(".hphoto-placeholder span").innerText=D.photoPlaceholder;
+  if(D.photoData){ document.getElementById("hphoto-img").src=D.photoData; document.getElementById("hphoto-img").style.display="block"; document.querySelector(".hphoto-placeholder").style.display="none"; }
+  else{ document.getElementById("hphoto-img").style.display="none"; document.querySelector(".hphoto-placeholder").style.display="flex"; }
+  renderHeroButtons(); renderTraitCards(); renderExperience(); renderEducation(); renderFinanceBars(); renderTagClouds(); renderCerts(); renderContactLinks(); renderCustomSections(); renderNavLinks(); applySectionHeadings(); applyColors();
+}
+
+function capitalizeFirst(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+function renderHeroButtons(){ let w=document.getElementById("hero-btns-wrap"); if(w) w.innerHTML=(D.heroButtons||[]).map(b=>`<a href="${b.url}" class="btn btnp"><span>${capitalizeFirst(b.icon)} ${b.label}</span></a>`).join(""); }
+function renderTraitCards(){ let w=document.getElementById("trait-cards-wrap"); if(w) w.innerHTML=(D.traitCards||[]).map(t=>`<div class="tcard"><div class="tcard-icon">${t.icon}</div><div><h3>${t.title}</h3><p>${t.desc}</p></div></div>`).join(""); }
+function renderExperience(){
+  let el=document.getElementById("exp-timeline");
+  if(!el) return;
+  el.innerHTML=(D.experience||[]).map(e=>{
+    let lines=(e.points||"").split("\n").filter(l=>l.trim());
+    let bullets=lines.map(l=>{
+      // Format: "Title | detail description" — pipe separates main from expandable detail
+      let parts=l.split("|");
+      let main=parts[0].trim();
+      let detail=parts[1]?parts[1].trim():"";
+      if(detail){
+        return `<li class="exp-bullet has-detail" onclick="this.classList.toggle('open')">
+          <div class="exp-bullet-trigger">
+            <span class="exp-bullet-arrow">›</span>
+            <span>${main}</span>
+          </div>
+          <div class="exp-bullet-detail"><p>${detail}</p></div>
+        </li>`;
+      }
+      return `<li class="exp-bullet">
+        <div class="exp-bullet-trigger">
+          <span class="exp-bullet-arrow" style="opacity:.4">›</span>
+          <span>${main}</span>
+        </div>
+      </li>`;
+    }).join("");
+    return `<div class="titem"><div class="tdot"></div><div class="ecard exp-ecard"><div class="etop"><span class="eyear">${e.year}</span></div><h3>${e.title}</h3><h4>${e.org}</h4><ul>${bullets}</ul></div></div>`;
+  }).join("");
+}
+function renderEducation(){ let el=document.getElementById("edu-timeline"); if(el) el.innerHTML=(D.education||[]).map((e,i)=>`<div class="titem"><div class="tdot"></div><div class="ecard"><div class="etop"><span class="eyear">${e.year}</span><span class="etype">${e.type||""}</span></div><div class="ehead"><h3>${e.title}</h3></div><h4>${e.org}</h4><div class="esubs">${e.subjects||""}</div></div></div>`).join(""); }
+function renderFinanceBars(){ let el=document.getElementById("finance-bars"); if(el) el.innerHTML=(D.financeSkills||[]).map(s=>`<div class="sbar-item"><div class="sbar-label"><span>${s.name}</span><span>${s.pct}%</span></div><div class="sbar-track"><div class="sbar-fill" style="width:${s.pct}%"></div></div></div>`).join(""); }
+function renderTagClouds(){ document.getElementById("tools-cloud").innerHTML=(D.toolSkills||[]).map(t=>`<span class="tag ${t.hi?"hi":""}">${t.name}</span>`).join(""); document.getElementById("law-cloud").innerHTML=(D.lawSkills||[]).map(t=>`<span class="tag ${t.hi?"hi":""}">${t.name}</span>`).join(""); }
+function renderCerts(){ let g=document.getElementById("cert-grid"); if(g) g.innerHTML=(D.certifications||[]).map(c=>`<a class="cert-card" href="${c.link||"#"}"><div class="cert-icon">${c.icon}</div><div class="cert-name">${c.name}</div><div class="cert-issuer">${c.issuer}</div><div class="cert-year">${c.year}</div>${c.desc?`<div class="cert-desc">${c.desc}</div>`:""}</a>`).join(""); }
+function renderContactLinks(){ let w=document.getElementById("contact-links-wrap"); if(w) w.innerHTML=(D.contactLinks||[]).map(l=>`<a href="${l.url}" class="clink" data-icon="${l.icon}"><span>${capitalizeFirst(l.icon)} ${l.label}</span></a>`).join(""); }
+function renderCustomSections(){ let w=document.getElementById("custom-sections-wrap"); if(w) w.innerHTML=(D.customSections||[]).map((s,i)=>{ let key=s.title.toLowerCase().replace(/[^a-z0-9]+/g,'-'); return `<section class="sec ${i%2?"secdark":""}" data-cskey="${key}"><div class="ct"><div class="slabel">${s.label||`0${8+i} — ${s.title}`}</div><h2 class="stitle">${s.title}</h2>${s.type==="bullets"?`<ul>${s.body.split("\n").filter(l=>l.trim()).map(l=>`<li>${l}</li>`).join("")}</ul>`:s.type==="cards"?`<div class="cert-grid">${s.body.split("\n").map(l=>`<div class="cert-card">${l}</div>`).join("")}</div>`:`<p>${s.body}</p>`}</div></section>`; }).join(""); }
+function renderNavLinks(){ let nav=document.getElementById("navl"); if(nav){ let items=[{href:"#about",label:"About"},{href:"#experience",label:"Experience"},{href:"#skills",label:"Skills"},{href:"#certifications",label:"Certifications"},{href:"#education",label:"Education"}]; (D.customSections||[]).forEach(s=>{ let id="custom-"+s.title.toLowerCase().replace(/[^a-z0-9]+/g,'-'); items.push({href:"#"+id,label:s.title}); }); items.push({href:"#contact",label:"Contact"}); nav.innerHTML=items.map(i=>`<li><a href="${i.href}">${i.label}</a></li>`).join(""); } }
+function applySectionHeadings(){ let sh=D.sectionHeadings; if(sh.about){ document.getElementById("sh-about-label").innerText=sh.about.label; document.getElementById("sh-about-title").innerHTML=sh.about.title+"<br/><span class='accent' id='sh-about-accent'>"+sh.about.accent+"</span>"; } if(sh.experience){ document.getElementById("sh-experience-label").innerText=sh.experience.label; document.getElementById("sh-experience-title").innerHTML=sh.experience.title+" <span class='accent' id='sh-experience-accent'>"+sh.experience.accent+"</span>"; } if(sh.skills){ document.getElementById("sh-skills-label").innerText=sh.skills.label; document.getElementById("sh-skills-title").innerHTML=sh.skills.title+" <span class='accent' id='sh-skills-accent'>"+sh.skills.accent+"</span>"; } if(sh.certifications){ document.getElementById("sh-certifications-label").innerText=sh.certifications.label; document.getElementById("sh-certifications-title").innerHTML=sh.certifications.title+" <span class='accent' id='sh-certifications-accent'>"+sh.certifications.accent+"</span>"; } if(sh.education){ document.getElementById("sh-education-label").innerText=sh.education.label; document.getElementById("sh-education-title").innerHTML=sh.education.title+" <span class='accent' id='sh-education-accent'>"+sh.education.accent+"</span>"; } if(sh.contact){ document.getElementById("sh-contact-label").innerText=sh.contact.label; document.getElementById("sh-contact-title").innerHTML=sh.contact.title+" <span class='accent' id='sh-contact-accent'>"+sh.contact.accent+"</span>"; } }
+function applyColors(){
+  if(!D.colors) return;
+  var isLight=document.body.classList.contains("violet");
+  var C=D.colors;
+  function pick(obj,darkKey,lightKey,fallbackDark,fallbackLight){ return isLight?(obj[lightKey]||fallbackLight):(obj[darkKey]||fallbackDark); }
+  // Bio
+  var bioH=document.querySelector("#about .about-bio .stitle"); if(bioH) bioH.style.color=pick(C.bio,"darkHeading","lightHeading","#eef2f8","#060f1e");
+  var p1=document.getElementById("s-bio1"); if(p1) p1.style.color=pick(C.bio,"darkP1","lightP1","#8090a8","#1e4060");
+  var p2=document.getElementById("s-bio2"); if(p2) p2.style.color=pick(C.bio,"darkP2","lightP2","#8090a8","#1e4060");
+  // Experience
+  var expH=document.querySelector("#experience .stitle"); if(expH) expH.style.color=pick(C.experience,"darkHeading","lightHeading","#eef2f8","#060f1e");
+  document.querySelectorAll("#experience .timeline .titem ul li, #experience .titem h3, #experience .titem h4, #experience .tdate").forEach(el=>el.style.color=pick(C.experience,"darkBody","lightBody","#8090a8","#1e4060"));
+  // Skills
+  var skillH=document.querySelector("#skills .stitle"); if(skillH) skillH.style.color=pick(C.skills,"darkHeading","lightHeading","#eef2f8","#060f1e");
+  document.querySelectorAll("#skills .sbar-label, #skills .skill-gtitle").forEach(el=>el.style.color=pick(C.skills,"darkSkillText","lightSkillText","#8090a8","#1e4060"));
+  var hiBorder=pick(C.skills,"darkHiBorder","lightHiBorder","#4da6ff","#0369a1");
+  var hiGlow=pick(C.skills,"darkHiGlow","lightHiGlow","rgba(77,166,255,0.45)","rgba(3,105,161,0.35)");
+  document.querySelectorAll("#skills .tag.hi").forEach(el=>{ el.style.borderColor=hiBorder; el.style.color=hiBorder; el.style.boxShadow="0 0 12px "+hiGlow+", inset 0 0 8px "+hiGlow.replace(/[\d.]+\)$/,"0.08)"); });
+  // Certifications
+  var certH=document.querySelector("#certifications .stitle"); if(certH) certH.style.color=pick(C.certifications,"darkHeading","lightHeading","#eef2f8","#060f1e");
+  document.querySelectorAll("#certifications .cert-name").forEach(el=>el.style.color=pick(C.certifications,"darkName","lightName","#eef2f8","#060f1e"));
+  document.querySelectorAll("#certifications .cert-issuer").forEach(el=>el.style.color=pick(C.certifications,"darkIssuer","lightIssuer","#4da6ff","#0369a1"));
+  document.querySelectorAll("#certifications .cert-desc").forEach(el=>el.style.color=pick(C.certifications,"darkDesc","lightDesc","#8090a8","#1e4060"));
+  // Education
+  var eduH=document.querySelector("#education .stitle"); if(eduH) eduH.style.color=pick(C.education,"darkHeading","lightHeading","#eef2f8","#060f1e");
+  document.querySelectorAll("#education .ecard .esubs, #education .ecard h3, #education .ecard h4, #education .ecard .eyear").forEach(el=>el.style.color=pick(C.education,"darkBody","lightBody","#8090a8","#1e4060"));
+  // Contact
+  var conH=document.querySelector("#contact .stitle"); if(conH) conH.style.color=pick(C.contact,"darkHeading","lightHeading","#eef2f8","#060f1e");
+  var conP=document.querySelector("#contact .contact-grid p"); if(conP) conP.style.color=pick(C.contact,"darkDesc","lightDesc","#8090a8","#1e4060");
+  // Custom sections
+  (D.customSections||[]).forEach(s=>{
+    var key=s.title.toLowerCase().replace(/[^a-z0-9]+/g,'-');
+    var sc=C.customSections&&C.customSections[key]?C.customSections[key]:{};
+    var secEl=document.querySelector('#custom-sections-wrap section[data-cskey="'+key+'"]');
+    if(!secEl) return;
+    var csH=secEl.querySelector('.stitle'); if(csH) csH.style.color=pick(sc,"darkHeading","lightHeading","#eef2f8","#060f1e");
+    secEl.querySelectorAll('p,li,.custom-sec-body').forEach(el=>el.style.color=pick(sc,"darkBody","lightBody","#8090a8","#1e4060"));
+  });
+}
+
+// ---- Inline color helpers (per-field color pickers inside each tab) ----
+function setInlineColorInput(swatchId, hexId, value){
+  var sw=document.getElementById(swatchId); if(sw) sw.value=value;
+  var hx=document.getElementById(hexId); if(hx) hx.value=value;
+}
+function loadInlineColorFields(){
+  if(!D.colors) return;
+  var C=D.colors;
+  // Bio
+  setInlineColorInput('ic-bio-p1-dark','ic-bio-p1-dark-hex', C.bio.darkP1||'#8090a8');
+  setInlineColorInput('ic-bio-p1-light','ic-bio-p1-light-hex', C.bio.lightP1||'#1e4060');
+  setInlineColorInput('ic-bio-p2-dark','ic-bio-p2-dark-hex', C.bio.darkP2||'#8090a8');
+  setInlineColorInput('ic-bio-p2-light','ic-bio-p2-light-hex', C.bio.lightP2||'#1e4060');
+  setInlineColorInput('ic-bio-h-dark','ic-bio-h-dark-hex', C.bio.darkHeading||'#eef2f8');
+  setInlineColorInput('ic-bio-h-light','ic-bio-h-light-hex', C.bio.lightHeading||'#060f1e');
+  // Education
+  setInlineColorInput('ic-edu-h-dark','ic-edu-h-dark-hex', C.education.darkHeading||'#eef2f8');
+  setInlineColorInput('ic-edu-h-light','ic-edu-h-light-hex', C.education.lightHeading||'#060f1e');
+  setInlineColorInput('ic-edu-b-dark','ic-edu-b-dark-hex', C.education.darkBody||'#8090a8');
+  setInlineColorInput('ic-edu-b-light','ic-edu-b-light-hex', C.education.lightBody||'#1e4060');
+  // Skills
+  setInlineColorInput('ic-sk-h-dark','ic-sk-h-dark-hex', C.skills.darkHeading||'#eef2f8');
+  setInlineColorInput('ic-sk-h-light','ic-sk-h-light-hex', C.skills.lightHeading||'#060f1e');
+  setInlineColorInput('ic-sk-t-dark','ic-sk-t-dark-hex', C.skills.darkSkillText||'#8090a8');
+  setInlineColorInput('ic-sk-t-light','ic-sk-t-light-hex', C.skills.lightSkillText||'#1e4060');
+  setInlineColorInput('ic-sk-hb-dark','ic-sk-hb-dark-hex', C.skills.darkHiBorder||'#4da6ff');
+  setInlineColorInput('ic-sk-hb-light','ic-sk-hb-light-hex', C.skills.lightHiBorder||'#0369a1');
+  // Certifications
+  setInlineColorInput('ic-ct-n-dark','ic-ct-n-dark-hex', C.certifications.darkName||'#eef2f8');
+  setInlineColorInput('ic-ct-n-light','ic-ct-n-light-hex', C.certifications.lightName||'#060f1e');
+  setInlineColorInput('ic-ct-i-dark','ic-ct-i-dark-hex', C.certifications.darkIssuer||'#4da6ff');
+  setInlineColorInput('ic-ct-i-light','ic-ct-i-light-hex', C.certifications.lightIssuer||'#0369a1');
+  setInlineColorInput('ic-ct-d-dark','ic-ct-d-dark-hex', C.certifications.darkDesc||'#8090a8');
+  setInlineColorInput('ic-ct-d-light','ic-ct-d-light-hex', C.certifications.lightDesc||'#1e4060');
+  // Experience inline
+  setInlineColorInput('ic-exp-h-dark','ic-exp-h-dark-hex', C.experience.darkHeading||'#eef2f8');
+  setInlineColorInput('ic-exp-h-light','ic-exp-h-light-hex', C.experience.lightHeading||'#060f1e');
+  setInlineColorInput('ic-exp-b-dark','ic-exp-b-dark-hex', C.experience.darkBody||'#8090a8');
+  setInlineColorInput('ic-exp-b-light','ic-exp-b-light-hex', C.experience.lightBody||'#1e4060');
+}
+window.saveInlineColor=function(secId, fieldMap){
+  if(!D.colors[secId]) D.colors[secId]={};
+  Object.entries(fieldMap).forEach(([colorKey,inputId])=>{
+    var el=document.getElementById(inputId); if(el) D.colors[secId][colorKey]=el.value;
+  });
+  applyColors();
+};
+window.resetInlineColor=function(secId, colorKey, defaultVal, swatchId){
+  if(!D.colors[secId]) D.colors[secId]={};
+  D.colors[secId][colorKey]=defaultVal;
+  var sw=document.getElementById(swatchId); if(sw) sw.value=defaultVal;
+  var hx=document.getElementById(swatchId+'-hex'); if(hx) hx.value=defaultVal;
+  applyColors();
+  saveAndSync();
+  showToast('↺ Reset to default!');
+};
+window.saveHeroBrandingWithSync = function(){ D.firstName=document.getElementById("a-first-name").value; D.lastNameAccent=document.getElementById("a-last-name").value; D.logoText=document.getElementById("a-logo-text").value; D.scrollHint=document.getElementById("a-scroll-hint").value; D.eyebrow=document.getElementById("a-eyebrow").value; D.tagline=document.getElementById("a-tagline").value; saveAndSync(); };
+window.saveAboutWithSync = function(){ D.bio1=document.getElementById("a-bio1").value; D.bio2=document.getElementById("a-bio2").value; saveAndSync(); };
+window.saveGeneralWithSync = function(){ D.contactDesc=document.getElementById("a-contact-desc").value; D.formAction=document.getElementById("a-form-action").value; saveAndSync(); };
+window.saveFooterWithSync = function(){ D.footerName=document.getElementById("f-name").value; D.footerCopy=document.getElementById("f-copy").value; saveAndSync(); };
+window.savePhotoPlaceholderWithSync = function(){ D.photoPlaceholder=document.getElementById("a-photo-placeholder").value; saveAndSync(); };
+window.saveHeadingsWithSync = function(){ let sh=D.sectionHeadings; sh.about.label=document.getElementById("h-about-label").value; sh.about.title=document.getElementById("h-about-title").value; sh.about.accent=document.getElementById("h-about-accent").value; sh.experience.label=document.getElementById("h-exp-label").value; sh.experience.title=document.getElementById("h-exp-title").value; sh.experience.accent=document.getElementById("h-exp-accent").value; sh.skills.label=document.getElementById("h-skills-label").value; sh.skills.title=document.getElementById("h-skills-title").value; sh.skills.accent=document.getElementById("h-skills-accent").value; sh.certifications.label=document.getElementById("h-certs-label").value; sh.certifications.title=document.getElementById("h-certs-title").value; sh.certifications.accent=document.getElementById("h-certs-accent").value; sh.education.label=document.getElementById("h-edu-label").value; sh.education.title=document.getElementById("h-edu-title").value; sh.education.accent=document.getElementById("h-edu-accent").value; sh.contact.label=document.getElementById("h-contact-label").value; sh.contact.title=document.getElementById("h-contact-title").value; sh.contact.accent=document.getElementById("h-contact-accent").value; saveAndSync(); };
+function loadColorsFields(){ renderColorsAdmin(); }
+
+function renderColorsAdmin(){
+  if(!D.colors||typeof D.colors.bio!=="object") D.colors=JSON.parse(JSON.stringify(DEFAULTS.colors));
+  if(!D.colors.customSections) D.colors.customSections={};
+
+  var sections=[
+    {id:"bio",label:"About / Bio",emoji:"👤",num:"01",fields:[
+      {label:"Heading",darkKey:"darkHeading",lightKey:"lightHeading",type:"color"},
+      {label:"Paragraph 1",darkKey:"darkP1",lightKey:"lightP1",type:"color"},
+      {label:"Paragraph 2",darkKey:"darkP2",lightKey:"lightP2",type:"color"}
+    ]},
+    {id:"experience",label:"Experience",emoji:"💼",num:"02",fields:[
+      {label:"Heading",darkKey:"darkHeading",lightKey:"lightHeading",type:"color"},
+      {label:"Body text (roles, dates, bullets)",darkKey:"darkBody",lightKey:"lightBody",type:"color"}
+    ]},
+    {id:"skills",label:"Skills",emoji:"🛠️",num:"03",fields:[
+      {label:"Heading",darkKey:"darkHeading",lightKey:"lightHeading",type:"color"},
+      {label:"Skill labels & category titles",darkKey:"darkSkillText",lightKey:"lightSkillText",type:"color"},
+      {label:"Highlighted tag — border color",darkKey:"darkHiBorder",lightKey:"lightHiBorder",type:"color"},
+      {label:"Highlighted tag — glow (rgba)",darkKey:"darkHiGlow",lightKey:"lightHiGlow",type:"text",placeholder:"e.g. rgba(77,166,255,0.45)"}
+    ]},
+    {id:"certifications",label:"Certifications",emoji:"📜",num:"04",fields:[
+      {label:"Heading",darkKey:"darkHeading",lightKey:"lightHeading",type:"color"},
+      {label:"Cert name",darkKey:"darkName",lightKey:"lightName",type:"color"},
+      {label:"Issuer",darkKey:"darkIssuer",lightKey:"lightIssuer",type:"color"},
+      {label:"Description",darkKey:"darkDesc",lightKey:"lightDesc",type:"color"}
+    ]},
+    {id:"education",label:"Education",emoji:"🎓",num:"05",fields:[
+      {label:"Heading",darkKey:"darkHeading",lightKey:"lightHeading",type:"color"},
+      {label:"Body text (degree, org, subjects)",darkKey:"darkBody",lightKey:"lightBody",type:"color"}
+    ]},
+    {id:"contact",label:"Contact",emoji:"✉️",num:"07",fields:[
+      {label:"Heading",darkKey:"darkHeading",lightKey:"lightHeading",type:"color"},
+      {label:"Description paragraph",darkKey:"darkDesc",lightKey:"lightDesc",type:"color"}
+    ]}
+  ];
+
+  (D.customSections||[]).forEach(function(s,i){
+    var key=s.title.toLowerCase().replace(/[^a-z0-9]+/g,"-");
+    if(!D.colors.customSections[key]) D.colors.customSections[key]={darkHeading:"#eef2f8",lightHeading:"#060f1e",darkBody:"#8090a8",lightBody:"#1e4060"};
+    sections.push({id:"__cs__"+key,label:s.title,emoji:"➕",num:"0"+(8+i),customKey:key,fields:[
+      {label:"Heading",darkKey:"darkHeading",lightKey:"lightHeading",type:"color"},
+      {label:"Body text",darkKey:"darkBody",lightKey:"lightBody",type:"color"}
+    ]});
+  });
+
+  var wrap=document.getElementById("colors-sections-wrap");
+  if(!wrap) return;
+
+  wrap.innerHTML=sections.map(function(sec){
+    var isCustom=!!sec.customKey;
+    var cobj=isCustom?(D.colors.customSections[sec.customKey]||{}):(D.colors[sec.id]||{});
+    var saveCall=isCustom?"saveCustomSectionColors('"+sec.customKey+"')":`saveSectionColors('${sec.id}')`;
+
+    var rows=sec.fields.map(function(f){
+      var dv=cobj[f.darkKey]||"#888888";
+      var lv=cobj[f.lightKey]||"#222222";
+      var secAttr='data-sec="'+sec.id+'" data-custom="'+(sec.customKey||"")+'"';
+      var isText=f.type==="text";
+
+      var darkInput=isText
+        ?`<input class="ainput color-adm-inp" type="text" style="font-size:.78rem;margin:0" ${secAttr} data-key="${f.darkKey}" value="${dv}" placeholder="${f.placeholder||""}">`
+        :`<div style="display:flex;align-items:center;gap:.5rem">
+            <input class="color-adm-inp color-swatch-inp" type="color" ${secAttr} data-key="${f.darkKey}" value="${dv}" title="Pick dark theme color" style="width:2.4rem;height:2.4rem;padding:.15rem;border-radius:7px;border:1px solid var(--bd);cursor:pointer;background:var(--bg3);flex-shrink:0">
+            <input type="text" class="ainput color-adm-inp color-hex-inp" style="font-size:.78rem;margin:0;font-family:monospace" ${secAttr} data-key="${f.darkKey}" value="${dv}" placeholder="#rrggbb" maxlength="9">
+          </div>`;
+
+      var lightInput=isText
+        ?`<input class="ainput color-adm-inp" type="text" style="font-size:.78rem;margin:0" ${secAttr} data-key="${f.lightKey}" value="${lv}" placeholder="${f.placeholder||""}">`
+        :`<div style="display:flex;align-items:center;gap:.5rem">
+            <input class="color-adm-inp color-swatch-inp" type="color" ${secAttr} data-key="${f.lightKey}" value="${lv}" title="Pick light theme color" style="width:2.4rem;height:2.4rem;padding:.15rem;border-radius:7px;border:1px solid var(--bd);cursor:pointer;background:var(--bg3);flex-shrink:0">
+            <input type="text" class="ainput color-adm-inp color-hex-inp" style="font-size:.78rem;margin:0;font-family:monospace" ${secAttr} data-key="${f.lightKey}" value="${lv}" placeholder="#rrggbb" maxlength="9">
+          </div>`;
+
+      return `<div style="margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid var(--bd)">
+        <div style="font-size:.72rem;font-weight:600;color:var(--w2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.6rem">${f.label}</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+          <div>
+            <div style="font-size:.64rem;color:var(--m);margin-bottom:.35rem;display:flex;align-items:center;gap:.3rem">🌙 <span style="font-weight:600;letter-spacing:.06em;text-transform:uppercase">Dark</span></div>
+            ${darkInput}
+          </div>
+          <div>
+            <div style="font-size:.64rem;color:var(--m);margin-bottom:.35rem;display:flex;align-items:center;gap:.3rem">🌊 <span style="font-weight:600;letter-spacing:.06em;text-transform:uppercase">Light</span></div>
+            ${lightInput}
+          </div>
+        </div>
+      </div>`;
+    }).join("");
+
+    // remove last border
+    rows=rows.replace(/border-bottom:1px solid var\(--bd\)">\s*$/, 'border-bottom:none">');
+
+    return `<div class="acard" style="margin-bottom:1.1rem;padding:0;overflow:hidden">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.4rem;background:var(--bg3);border-bottom:1px solid var(--bd)">
+        <div style="display:flex;align-items:center;gap:.6rem">
+          <span style="font-size:1.2rem">${sec.emoji}</span>
+          <div>
+            <div style="font-size:.62rem;color:var(--blue);font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.1rem">${sec.num}</div>
+            <div style="font-size:.92rem;font-weight:700;color:var(--w);font-family:var(--fd)">${sec.label}${isCustom?' <span style="font-size:.68rem;color:var(--m);font-family:var(--fb);font-weight:400">(custom)</span>':''}</div>
+          </div>
+        </div>
+        <button class="savebtn" style="width:auto;padding:.48rem 1.2rem;font-size:.78rem;margin:0;flex-shrink:0" onclick="${saveCall}">💾 Save &amp; Sync</button>
+      </div>
+      <div style="padding:1.2rem 1.4rem">${rows}</div>
+    </div>`;
+  }).join("");
+
+  // Wire up color swatches ↔ hex inputs live sync
+  wrap.querySelectorAll('.color-swatch-inp').forEach(function(sw){
+    var siblings=wrap.querySelectorAll('.color-adm-inp[data-sec="'+sw.dataset.sec+'"][data-custom="'+sw.dataset.custom+'"][data-key="'+sw.dataset.key+'"]');
+    sw.addEventListener('input',function(){
+      siblings.forEach(function(s){ if(s!==sw) s.value=sw.value; });
+    });
+  });
+  wrap.querySelectorAll('.color-hex-inp').forEach(function(hex){
+    var siblings=wrap.querySelectorAll('.color-adm-inp[data-sec="'+hex.dataset.sec+'"][data-custom="'+hex.dataset.custom+'"][data-key="'+hex.dataset.key+'"]');
+    hex.addEventListener('input',function(){
+      if(/^#[0-9a-fA-F]{6}$/.test(hex.value)){
+        siblings.forEach(function(s){ if(s!==hex) s.value=hex.value; });
+      }
+    });
+  });
+}
+
+function saveSectionColors(secId){
+  if(!D.colors||typeof D.colors.bio!=="object") D.colors=JSON.parse(JSON.stringify(DEFAULTS.colors));
+  if(!D.colors[secId]) D.colors[secId]={};
+  // Use a Map to deduplicate — last value wins (hex text input is last in DOM, preferred)
+  var vals={};
+  document.querySelectorAll('.color-adm-inp[data-sec="'+secId+'"][data-custom=""]').forEach(function(inp){
+    if(inp.dataset.key) vals[inp.dataset.key]=inp.value;
+  });
+  Object.assign(D.colors[secId],vals);
+  saveAndSync(); applyColors(); showToast("✅ "+secId.charAt(0).toUpperCase()+secId.slice(1)+" colors saved!");
+}
+
+function saveCustomSectionColors(csKey){
+  if(!D.colors.customSections) D.colors.customSections={};
+  if(!D.colors.customSections[csKey]) D.colors.customSections[csKey]={};
+  var vals={};
+  document.querySelectorAll('.color-adm-inp[data-custom="'+csKey+'"]').forEach(function(inp){
+    if(inp.dataset.key) vals[inp.dataset.key]=inp.value;
+  });
+  Object.assign(D.colors.customSections[csKey],vals);
+  saveAndSync(); applyColors(); showToast("✅ Custom section colors saved!");
+}
+
+window.saveColorsWithSync=function(){ ["bio","experience","skills","certifications","education","contact"].forEach(saveSectionColors); (D.customSections||[]).forEach(function(s){ saveCustomSectionColors(s.title.toLowerCase().replace(/[^a-z0-9]+/g,"-")); }); };
+window.resetColorsWithSync=function(){ D.colors=JSON.parse(JSON.stringify(DEFAULTS.colors)); saveAndSync(); renderColorsAdmin(); applyColors(); showToast("✅ Colors reset to defaults!"); };
+
+window.saveLoginHintWithSync = function(){ let h=document.getElementById("login-hint-text").value; if(h.trim()!==""){ D.loginHint=h; saveAndSync(); document.getElementById("login-hint-display").innerHTML=`Hint: ${D.loginHint}`; } else alert("Hint cannot be empty"); };
+window.changeAdminPassword = function(){ let np=document.getElementById("new-password").value, cp=document.getElementById("confirm-password").value; if(np.length<4){ alert("Min 4 chars"); return; } if(np!==cp){ alert("Passwords do not match"); return; } ADMIN_PASSWORD=np; localStorage.setItem("admin_password",ADMIN_PASSWORD); alert("Password changed!"); document.getElementById("new-password").value=""; document.getElementById("confirm-password").value=""; };
+
+// ---- Hero buttons CRUD ----
+window.addHeroBtnWithSync = function(){ let l=document.getElementById("hb-label").value, u=document.getElementById("hb-url").value, i=document.getElementById("hb-icon").value; if(!l||!u) return alert("Label and URL required"); if(heroEditIndex!==null){ D.heroButtons[heroEditIndex]={icon:i,label:l,url:u}; heroEditIndex=null; document.getElementById("heroBtnSaveBtn").innerText="+ Add Button & Sync"; } else { D.heroButtons.push({icon:i,label:l,url:u}); } saveAndSync(); document.getElementById("hb-label").value=""; document.getElementById("hb-url").value=""; renderHeroBtnsList(); renderHeroButtons(); };
+window.editHeroBtn = function(idx){ let b=D.heroButtons[idx]; document.getElementById("hb-label").value=b.label; document.getElementById("hb-url").value=b.url; document.getElementById("hb-icon").value=b.icon; heroEditIndex=idx; document.getElementById("heroBtnSaveBtn").innerText="✓ Update Button & Sync"; };
+window.delHeroBtn = function(idx){ D.heroButtons.splice(idx,1); saveAndSync(); renderHeroBtnsList(); renderHeroButtons(); };
+function renderHeroBtnsList(){ let div=document.getElementById("hero-btns-admin"); if(div) div.innerHTML=D.heroButtons.map((b,i)=>`<div class="cert-list-item"><div class="drag-handle">⋮⋮</div><div><strong>${b.label}</strong> (${b.icon})</div><div><button class="edtbtn" onclick="editHeroBtn(${i})">✏️ Edit</button><button class="delbtn" onclick="delHeroBtn(${i})">❌</button></div></div>`).join(""); new Sortable(div,{handle:".drag-handle",animation:150,onEnd:()=>{ let items=[...div.querySelectorAll(".cert-list-item")]; let newOrder=items.map(item=>item.querySelector("div:nth-child(2) strong")?.innerText); let newArr=[]; newOrder.forEach(l=>{ let b=D.heroButtons.find(b=>b.label===l); if(b) newArr.push(b); }); if(newArr.length===D.heroButtons.length) D.heroButtons=newArr; saveAndSync(); renderHeroButtons(); }}); }
+
+// ---- Trait cards CRUD ----
+window.addTraitWithSync = function(){ let i=document.getElementById("nt-icon").value, t=document.getElementById("nt-title").value, d=document.getElementById("nt-desc").value; if(!t) return alert("Title required"); if(traitEditIndex!==null){ D.traitCards[traitEditIndex]={icon:i,title:t,desc:d}; traitEditIndex=null; document.getElementById("traitSaveBtn").innerText="+ Add Card & Sync"; } else { D.traitCards.push({icon:i,title:t,desc:d}); } saveAndSync(); document.getElementById("nt-icon").value=""; document.getElementById("nt-title").value=""; document.getElementById("nt-desc").value=""; renderTraitsList(); renderTraitCards(); };
+window.editTrait = function(idx){ let t=D.traitCards[idx]; document.getElementById("nt-icon").value=t.icon; document.getElementById("nt-title").value=t.title; document.getElementById("nt-desc").value=t.desc; traitEditIndex=idx; document.getElementById("traitSaveBtn").innerText="✓ Update Card & Sync"; };
+window.delTrait = function(idx){ D.traitCards.splice(idx,1); saveAndSync(); renderTraitsList(); renderTraitCards(); };
+function renderTraitsList(){ let div=document.getElementById("trait-admin-list"); if(!div) return; div.innerHTML=D.traitCards.map((t,i)=>`<div class="cert-list-item"><div class="drag-handle">⋮⋮</div><div>${t.icon} ${t.title}</div><div><button class="edtbtn" onclick="editTrait(${i})">✏️ Edit</button><button class="delbtn" onclick="delTrait(${i})">❌</button></div></div>`).join(""); new Sortable(div,{handle:".drag-handle",animation:150,onEnd:()=>{ let items=[...div.querySelectorAll(".cert-list-item")]; let newOrder=items.map(item=>{ let txt=item.querySelector("div:nth-child(2)").innerText; let title=txt.split(" ").slice(1).join(" "); return D.traitCards.find(c=>c.title===title); }).filter(Boolean); if(newOrder.length===D.traitCards.length){ D.traitCards=newOrder; saveAndSync(); renderTraitCards(); } }}); }
+
+// ---- Experience CRUD ----
+window.addExperienceWithSync = function(){ if(expEditIndex!==null){ D.experience[expEditIndex]={year:document.getElementById("ne-year").value,title:document.getElementById("ne-title").value,org:document.getElementById("ne-org").value,points:document.getElementById("ne-points").value}; expEditIndex=null; document.getElementById("expSaveBtn").innerText="Add Entry & Sync"; } else { D.experience.push({year:document.getElementById("ne-year").value,title:document.getElementById("ne-title").value,org:document.getElementById("ne-org").value,points:document.getElementById("ne-points").value}); } saveAndSync(); clearExpForm(); renderExpList(); renderExperience(); };
+window.editExpItem = function(idx){ let e=D.experience[idx]; document.getElementById("ne-year").value=e.year; document.getElementById("ne-title").value=e.title; document.getElementById("ne-org").value=e.org; document.getElementById("ne-points").value=e.points; expEditIndex=idx; document.getElementById("expSaveBtn").innerText="✓ Update Entry & Sync"; };
+window.delExpItem = function(idx){ D.experience.splice(idx,1); saveAndSync(); renderExpList(); renderExperience(); };
+function renderExpList(){ let div=document.getElementById("exp-admin-list"); if(div) div.innerHTML=D.experience.map((e,i)=>`<div class="cert-list-item"><div class="drag-handle">⋮⋮</div><div><strong>${e.title}</strong> @ ${e.org} (${e.year})</div><div><button class="edtbtn" onclick="editExpItem(${i})">✏️ Edit</button><button class="delbtn" onclick="delExpItem(${i})">❌</button></div></div>`).join(""); new Sortable(div,{handle:".drag-handle",animation:150,onEnd:()=>{ let items=[...div.querySelectorAll(".cert-list-item")]; let newOrder=items.map(item=>item.querySelector("div:nth-child(2) strong")?.innerText); let newArr=[]; newOrder.forEach(t=>{ let f=D.experience.find(e=>e.title===t); if(f) newArr.push(f); }); if(newArr.length===D.experience.length) D.experience=newArr; saveAndSync(); renderExperience(); }}); }
+function clearExpForm(){ document.getElementById("ne-year").value=""; document.getElementById("ne-title").value=""; document.getElementById("ne-org").value=""; document.getElementById("ne-points").value=""; expEditIndex=null; document.getElementById("expSaveBtn").innerText="Add Entry & Sync"; }
+
+// ---- Education CRUD ----
+window.addEducationWithSync = function(){ if(eduEditIndex!==null){ D.education[eduEditIndex]={year:document.getElementById("ned-year").value,type:document.getElementById("ned-type").value,title:document.getElementById("ned-title").value,org:document.getElementById("ned-org").value,subjects:document.getElementById("ned-subs").value}; eduEditIndex=null; document.getElementById("eduSaveBtn").innerText="Add Entry & Sync"; } else { D.education.push({year:document.getElementById("ned-year").value,type:document.getElementById("ned-type").value,title:document.getElementById("ned-title").value,org:document.getElementById("ned-org").value,subjects:document.getElementById("ned-subs").value}); } saveAndSync(); clearEduForm(); renderEduList(); renderEducation(); };
+window.editEduItem = function(idx){ let e=D.education[idx]; document.getElementById("ned-year").value=e.year; document.getElementById("ned-type").value=e.type||""; document.getElementById("ned-title").value=e.title; document.getElementById("ned-org").value=e.org; document.getElementById("ned-subs").value=e.subjects||""; eduEditIndex=idx; document.getElementById("eduSaveBtn").innerText="✓ Update Entry & Sync"; };
+window.delEduItem = function(idx){ D.education.splice(idx,1); saveAndSync(); renderEduList(); renderEducation(); };
+function renderEduList(){ let div=document.getElementById("edu-admin-list"); if(div) div.innerHTML=D.education.map((e,i)=>`<div class="cert-list-item"><div class="drag-handle">⋮⋮</div><div><strong>${e.title}</strong> (${e.year})</div><div><button class="edtbtn" onclick="editEduItem(${i})">✏️ Edit</button><button class="delbtn" onclick="delEduItem(${i})">❌</button></div></div>`).join(""); new Sortable(div,{handle:".drag-handle",animation:150,onEnd:()=>{ let items=[...div.querySelectorAll(".cert-list-item")]; let newOrder=items.map(item=>item.querySelector("div:nth-child(2) strong")?.innerText); let newArr=[]; newOrder.forEach(t=>{ let f=D.education.find(e=>e.title===t); if(f) newArr.push(f); }); if(newArr.length===D.education.length) D.education=newArr; saveAndSync(); renderEducation(); }}); }
+function clearEduForm(){ document.getElementById("ned-year").value=""; document.getElementById("ned-type").value=""; document.getElementById("ned-title").value=""; document.getElementById("ned-org").value=""; document.getElementById("ned-subs").value=""; eduEditIndex=null; document.getElementById("eduSaveBtn").innerText="Add Entry & Sync"; }
+
+// ---- Finance Skills CRUD ----
+window.addFinanceSkillWithSync = function(){ if(finEditIdx!==null){ D.financeSkills[finEditIdx]={name:document.getElementById("nf-name").value,pct:parseInt(document.getElementById("nf-pct").value)}; finEditIdx=null; document.getElementById("financeSaveBtn").innerText="+ Add Skill & Sync"; } else { D.financeSkills.push({name:document.getElementById("nf-name").value,pct:parseInt(document.getElementById("nf-pct").value)}); } saveAndSync(); document.getElementById("nf-name").value=""; document.getElementById("nf-pct").value=""; renderFinanceList(); renderFinanceBars(); };
+window.editFinance = function(idx){ let s=D.financeSkills[idx]; document.getElementById("nf-name").value=s.name; document.getElementById("nf-pct").value=s.pct; finEditIdx=idx; document.getElementById("financeSaveBtn").innerText="✓ Update Skill & Sync"; };
+window.delFinance = function(idx){ D.financeSkills.splice(idx,1); saveAndSync(); renderFinanceList(); renderFinanceBars(); };
+function renderFinanceList(){ let div=document.getElementById("finance-admin-list"); if(div) div.innerHTML=D.financeSkills.map((s,i)=>`<div class="cert-list-item"><div class="drag-handle">⋮⋮</div><div>${s.name} (${s.pct}%)</div><div><button class="edtbtn" onclick="editFinance(${i})">✏️ Edit</button><button class="delbtn" onclick="delFinance(${i})">❌</button></div></div>`).join(""); new Sortable(div,{handle:".drag-handle",animation:150,onEnd:()=>{ let items=[...div.querySelectorAll(".cert-list-item")]; let newOrder=items.map(item=>item.querySelector("div:nth-child(2)").innerText.split(" (")[0]); let newArr=[]; newOrder.forEach(n=>{ let f=D.financeSkills.find(s=>s.name===n); if(f) newArr.push(f); }); if(newArr.length===D.financeSkills.length) D.financeSkills=newArr; saveAndSync(); renderFinanceBars(); }}); }
+
+// ---- Tools CRUD ----
+window.addToolSkillWithSync = function(){ let n=document.getElementById("nt-tool-name").value, h=document.getElementById("nt-tool-hi").value=="1"; if(!n) return alert("Tool name required"); if(toolEditIdx!==null){ D.toolSkills[toolEditIdx]={name:n,hi:h}; toolEditIdx=null; document.getElementById("toolSaveBtn").innerText="+ Add Tool & Sync"; } else { D.toolSkills.push({name:n,hi:h}); } saveAndSync(); renderToolsList(); renderTagClouds(); document.getElementById("nt-tool-name").value=""; };
+window.editTool = function(idx){ let t=D.toolSkills[idx]; document.getElementById("nt-tool-name").value=t.name; document.getElementById("nt-tool-hi").value=t.hi?"1":"0"; toolEditIdx=idx; document.getElementById("toolSaveBtn").innerText="✓ Update Tool & Sync"; };
+window.delTool = function(idx){ D.toolSkills.splice(idx,1); saveAndSync(); renderToolsList(); renderTagClouds(); };
+window.toggleToolHi = function(idx){ D.toolSkills[idx].hi=!D.toolSkills[idx].hi; saveAndSync(); renderToolsList(); renderTagClouds(); };
+function renderToolsList(){ let div=document.getElementById("tools-admin-list"); if(div) div.innerHTML=D.toolSkills.map((t,i)=>`<div class="cert-list-item"><div class="drag-handle">⋮⋮</div><div>${t.name} ${t.hi?"★":""}</div><div><button class="edtbtn" onclick="editTool(${i})">✏️ Edit</button><button class="edtbtn" onclick="toggleToolHi(${i})">${t.hi?"Remove ★":"Add ★"}</button><button class="delbtn" onclick="delTool(${i})">❌</button></div></div>`).join(""); new Sortable(div,{handle:".drag-handle",animation:150,onEnd:()=>{ let items=[...div.querySelectorAll(".cert-list-item")]; let newOrder=items.map(item=>item.querySelector("div:nth-child(2)").innerText.split(" ")[0]); let newArr=[]; newOrder.forEach(n=>{ let t=D.toolSkills.find(t=>t.name===n); if(t) newArr.push(t); }); if(newArr.length===D.toolSkills.length) D.toolSkills=newArr; saveAndSync(); renderTagClouds(); }}); }
+
+// ---- Law CRUD ----
+window.addLawSkillWithSync = function(){ let n=document.getElementById("nt-law-name").value, h=document.getElementById("nt-law-hi").value=="1"; if(!n) return alert("Law concept required"); if(lawEditIdx!==null){ D.lawSkills[lawEditIdx]={name:n,hi:h}; lawEditIdx=null; document.getElementById("lawSaveBtn").innerText="+ Add Law Skill & Sync"; } else { D.lawSkills.push({name:n,hi:h}); } saveAndSync(); renderLawList(); renderTagClouds(); document.getElementById("nt-law-name").value=""; };
+window.editLaw = function(idx){ let l=D.lawSkills[idx]; document.getElementById("nt-law-name").value=l.name; document.getElementById("nt-law-hi").value=l.hi?"1":"0"; lawEditIdx=idx; document.getElementById("lawSaveBtn").innerText="✓ Update Law Skill & Sync"; };
+window.delLaw = function(idx){ D.lawSkills.splice(idx,1); saveAndSync(); renderLawList(); renderTagClouds(); };
+window.toggleLawHi = function(idx){ D.lawSkills[idx].hi=!D.lawSkills[idx].hi; saveAndSync(); renderLawList(); renderTagClouds(); };
+function renderLawList(){ let div=document.getElementById("law-admin-list"); if(div) div.innerHTML=D.lawSkills.map((l,i)=>`<div class="cert-list-item"><div class="drag-handle">⋮⋮</div><div>${l.name} ${l.hi?"★":""}</div><div><button class="edtbtn" onclick="editLaw(${i})">✏️ Edit</button><button class="edtbtn" onclick="toggleLawHi(${i})">${l.hi?"Remove ★":"Add ★"}</button><button class="delbtn" onclick="delLaw(${i})">❌</button></div></div>`).join(""); new Sortable(div,{handle:".drag-handle",animation:150,onEnd:()=>{ let items=[...div.querySelectorAll(".cert-list-item")]; let newOrder=items.map(item=>item.querySelector("div:nth-child(2)").innerText.split(" ")[0]); let newArr=[]; newOrder.forEach(n=>{ let l=D.lawSkills.find(l=>l.name===n); if(l) newArr.push(l); }); if(newArr.length===D.lawSkills.length) D.lawSkills=newArr; saveAndSync(); renderTagClouds(); }}); }
+
+// ---- Certifications CRUD ----
+window.addCertWithSync = function(){ let icon=document.getElementById("nc-icon").value||"📜", name=document.getElementById("nc-name").value, issuer=document.getElementById("nc-issuer").value, year=document.getElementById("nc-year").value, link=document.getElementById("nc-link").value, desc=document.getElementById("nc-desc").value; if(!name) return alert("Certification name required"); if(certEditIndex!==null){ D.certifications[certEditIndex]={icon,name,issuer,year,link,desc}; certEditIndex=null; document.getElementById("certSaveBtn").innerText="+ Add Certification & Sync"; } else { D.certifications.push({icon,name,issuer,year,link,desc}); } saveAndSync(); renderCertsList(); renderCerts(); document.getElementById("nc-icon").value=""; document.getElementById("nc-name").value=""; document.getElementById("nc-issuer").value=""; document.getElementById("nc-year").value=""; document.getElementById("nc-link").value=""; document.getElementById("nc-desc").value=""; };
+window.editCertItem = function(idx){ let c=D.certifications[idx]; document.getElementById("nc-icon").value=c.icon; document.getElementById("nc-name").value=c.name; document.getElementById("nc-issuer").value=c.issuer; document.getElementById("nc-year").value=c.year; document.getElementById("nc-link").value=c.link||""; document.getElementById("nc-desc").value=c.desc||""; certEditIndex=idx; document.getElementById("certSaveBtn").innerText="✓ Update Certification & Sync"; };
+window.delCert = function(idx){ D.certifications.splice(idx,1); saveAndSync(); renderCertsList(); renderCerts(); };
+function renderCertsList(){ let div=document.getElementById("cert-admin-list"); if(div) div.innerHTML=D.certifications.map((c,i)=>`<div class="cert-list-item"><div class="drag-handle">⋮⋮</div><div><strong>${c.name}</strong> <span style="font-size:.7rem">${c.issuer}</span></div><div><button class="edtbtn" onclick="editCertItem(${i})">✏️ Edit</button><button class="delbtn" onclick="delCert(${i})">❌</button></div></div>`).join(""); new Sortable(div,{handle:".drag-handle",animation:150,onEnd:()=>{ let items=[...div.querySelectorAll(".cert-list-item")]; let newOrder=items.map(item=>item.querySelector("div:nth-child(2) strong")?.innerText); let newArr=[]; newOrder.forEach(n=>{ let c=D.certifications.find(c=>c.name===n); if(c) newArr.push(c); }); if(newArr.length===D.certifications.length) D.certifications=newArr; saveAndSync(); renderCerts(); }}); }
+
+// ---- Contact Links CRUD (custom icon & label) ----
+window.addContactLinkWithSync = function(){ let l=document.getElementById("cl-label").value, u=document.getElementById("cl-url").value, i=document.getElementById("cl-icon").value; if(!l||!u) return alert("Label and URL required"); if(contactLinkEditIndex!==null){ D.contactLinks[contactLinkEditIndex]={icon:i,label:l,url:u}; contactLinkEditIndex=null; document.getElementById("contactLinkSaveBtn").innerText="+ Add Link & Sync"; } else { D.contactLinks.push({icon:i,label:l,url:u}); } saveAndSync(); document.getElementById("cl-label").value=""; document.getElementById("cl-url").value=""; renderContactLinksList(); renderContactLinks(); };
+window.editContactLink = function(idx){ let l=D.contactLinks[idx]; document.getElementById("cl-label").value=l.label; document.getElementById("cl-url").value=l.url; document.getElementById("cl-icon").value=l.icon; contactLinkEditIndex=idx; document.getElementById("contactLinkSaveBtn").innerText="✓ Update Link & Sync"; };
+window.delContactLink = function(idx){ D.contactLinks.splice(idx,1); saveAndSync(); renderContactLinksList(); renderContactLinks(); };
+function renderContactLinksList(){ let div=document.getElementById("contact-links-admin"); if(div) div.innerHTML=D.contactLinks.map((l,i)=>`<div class="cert-list-item"><div class="drag-handle">⋮⋮</div><div><strong>${l.label}</strong> (${l.icon})</div><div><button class="edtbtn" onclick="editContactLink(${i})">✏️ Edit</button><button class="delbtn" onclick="delContactLink(${i})">❌</button></div></div>`).join(""); new Sortable(div,{handle:".drag-handle",animation:150,onEnd:()=>{ let items=[...div.querySelectorAll(".cert-list-item")]; let newOrder=items.map(item=>item.querySelector("div:nth-child(2) strong")?.innerText); let newArr=[]; newOrder.forEach(l=>{ let c=D.contactLinks.find(c=>c.label===l); if(c) newArr.push(c); }); if(newArr.length===D.contactLinks.length) D.contactLinks=newArr; saveAndSync(); renderContactLinks(); }}); }
+
+// ---- Custom Sections CRUD ----
+window.addCustomSectionWithSync = function(){ let title=document.getElementById("ns-sec-title").value, label=document.getElementById("ns-sec-label").value, type=document.getElementById("ns-sec-type").value, body=document.getElementById("ns-sec-body").value; if(!title) return alert("Section title required"); if(sectionEditIndex!==null){ D.customSections[sectionEditIndex]={title,label,type,body}; sectionEditIndex=null; document.getElementById("sectionSaveBtn").innerText="+ Add Section & Sync"; } else { D.customSections.push({title,label,type,body}); } saveAndSync(); renderSectionsList(); renderCustomSections(); renderNavLinks(); renderColorsAdmin(); document.getElementById("ns-sec-title").value=""; document.getElementById("ns-sec-label").value=""; document.getElementById("ns-sec-body").value=""; };
+window.editSection = function(idx){ let s=D.customSections[idx]; document.getElementById("ns-sec-title").value=s.title; document.getElementById("ns-sec-label").value=s.label||""; document.getElementById("ns-sec-type").value=s.type; document.getElementById("ns-sec-body").value=s.body; sectionEditIndex=idx; document.getElementById("sectionSaveBtn").innerText="✓ Update Section & Sync"; };
+window.delSection = function(idx){ D.customSections.splice(idx,1); saveAndSync(); renderSectionsList(); renderCustomSections(); renderNavLinks(); renderColorsAdmin(); };
+function renderSectionsList(){ let div=document.getElementById("sections-admin-list"); if(div) div.innerHTML=D.customSections.map((s,i)=>`<div class="cert-list-item"><div class="drag-handle">⋮⋮</div><div><strong>${s.title}</strong> (${s.type})</div><div><button class="edtbtn" onclick="editSection(${i})">✏️ Edit</button><button class="delbtn" onclick="delSection(${i})">❌</button></div></div>`).join(""); new Sortable(div,{handle:".drag-handle",animation:150,onEnd:()=>{ let items=[...div.querySelectorAll(".cert-list-item")]; let newOrder=items.map(item=>item.querySelector("div:nth-child(2) strong")?.innerText); let newArr=[]; newOrder.forEach(n=>{ let s=D.customSections.find(s=>s.title===n); if(s) newArr.push(s); }); if(newArr.length===D.customSections.length) D.customSections=newArr; saveAndSync(); renderCustomSections(); renderNavLinks(); }}); }
+
+// ---- Photo Cropper ----
+let cropState={img:null,x:0,y:0,zoom:1,dragging:false,lastX:0,lastY:0,pinchDist:0};
+const CROP_SIZE=280;
+
+window.initCropper=function(input){
+  let f=input.files[0]; if(!f) return;
+  let r=new FileReader();
+  r.onload=e=>{
+    let img=new Image();
+    img.onload=()=>{
+      cropState.img=img;
+      // Fit image to fill circle initially
+      let scale=Math.max(CROP_SIZE/img.width, CROP_SIZE/img.height);
+      cropState.zoom=scale;
+      cropState.x=(CROP_SIZE-img.width*scale)/2;
+      cropState.y=(CROP_SIZE-img.height*scale)/2;
+      let cv=document.getElementById("photo-crop-canvas");
+      cv.width=CROP_SIZE; cv.height=CROP_SIZE;
+      document.getElementById("crop-zoom").min=scale;
+      document.getElementById("crop-zoom").value=scale;
+      document.getElementById("crop-editor").style.display="block";
+      cropDraw();
+      attachCropEvents();
+    };
+    img.src=e.target.result;
+  };
+  r.readAsDataURL(f);
+};
+
+function cropDraw(){
+  let {img,x,y,zoom}=cropState;
+  if(!img) return;
+  zoom=parseFloat(document.getElementById("crop-zoom").value);
+  cropState.zoom=zoom;
+  let cv=document.getElementById("photo-crop-canvas");
+  let ctx=cv.getContext("2d");
+  ctx.clearRect(0,0,CROP_SIZE,CROP_SIZE);
+  ctx.drawImage(img, x, y, img.width*zoom, img.height*zoom);
+  updatePreviews();
+}
+
+function updatePreviews(){
+  ["preview-lg","preview-sm"].forEach(id=>{
+    let pv=document.getElementById(id);
+    let pctx=pv.getContext("2d");
+    let sz=pv.width;
+    pctx.clearRect(0,0,sz,sz);
+    pctx.drawImage(document.getElementById("photo-crop-canvas"),0,0,CROP_SIZE,CROP_SIZE,0,0,sz,sz);
+  });
+}
+
+function clampCrop(){
+  let {img,zoom}=cropState;
+  if(!img) return;
+  let w=img.width*zoom, h=img.height*zoom;
+  if(cropState.x>0) cropState.x=0;
+  if(cropState.y>0) cropState.y=0;
+  if(cropState.x+w<CROP_SIZE) cropState.x=CROP_SIZE-w;
+  if(cropState.y+h<CROP_SIZE) cropState.y=CROP_SIZE-h;
+}
+
+function attachCropEvents(){
+  let vp=document.getElementById("crop-viewport");
+  // Mouse
+  vp.onmousedown=e=>{ e.preventDefault(); cropState.dragging=true; cropState.lastX=e.clientX; cropState.lastY=e.clientY; vp.style.cursor="grabbing"; };
+  window.onmousemove=e=>{ if(!cropState.dragging) return; cropState.x+=(e.clientX-cropState.lastX); cropState.y+=(e.clientY-cropState.lastY); cropState.lastX=e.clientX; cropState.lastY=e.clientY; clampCrop(); cropDraw(); };
+  window.onmouseup=()=>{ cropState.dragging=false; vp.style.cursor="grab"; };
+  // Touch drag
+  vp.ontouchstart=e=>{ if(e.touches.length===1){ cropState.dragging=true; cropState.lastX=e.touches[0].clientX; cropState.lastY=e.touches[0].clientY; } else if(e.touches.length===2){ cropState.pinchDist=Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY); } };
+  vp.addEventListener("touchmove",e=>{ e.preventDefault(); if(e.touches.length===1&&cropState.dragging){ cropState.x+=(e.touches[0].clientX-cropState.lastX); cropState.y+=(e.touches[0].clientY-cropState.lastY); cropState.lastX=e.touches[0].clientX; cropState.lastY=e.touches[0].clientY; clampCrop(); cropDraw(); } else if(e.touches.length===2){ let d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX, e.touches[0].clientY-e.touches[1].clientY); let delta=d-cropState.pinchDist; cropState.pinchDist=d; let sldr=document.getElementById("crop-zoom"); sldr.value=Math.max(parseFloat(sldr.min),Math.min(4,parseFloat(sldr.value)+delta*.004)); cropDraw(); } },{passive:false});
+  vp.ontouchend=()=>{ cropState.dragging=false; };
+  // Wheel zoom
+  vp.addEventListener("wheel",e=>{ e.preventDefault(); let sldr=document.getElementById("crop-zoom"); sldr.value=Math.max(parseFloat(sldr.min),Math.min(4,parseFloat(sldr.value)-e.deltaY*.002)); cropDraw(); },{passive:false});
+}
+
+window.cropDraw=cropDraw;
+
+window.resetCropper=function(){
+  cropState={img:null,x:0,y:0,zoom:1,dragging:false,lastX:0,lastY:0,pinchDist:0};
+  document.getElementById("crop-editor").style.display="none";
+  document.getElementById("photo-file-input").value="";
+};
+
+window.saveCroppedPhotoWithSync=function(){
+  let cv=document.getElementById("photo-crop-canvas");
+  if(!cropState.img) return alert("Please upload and crop a photo first.");
+  // Export circle-clipped 400×400
+  let out=document.createElement("canvas"); out.width=400; out.height=400;
+  let octx=out.getContext("2d");
+  octx.beginPath(); octx.arc(200,200,200,0,Math.PI*2); octx.clip();
+  octx.drawImage(cv,0,0,CROP_SIZE,CROP_SIZE,0,0,400,400);
+  D.photoData=out.toDataURL("image/jpeg",.92);
+  saveAndSync();
+  showToast("✅ Photo saved & synced!");
+};
+
+// ---- Firebase ----
+function loadFirebaseConfigFromStorage(){
+  let cfg=localStorage.getItem("firebase_config");
+  if(!cfg) return;
+  try{
+    let c=JSON.parse(cfg);
+    // Defer until admin panel inputs exist in DOM
+    function tryFill(){
+      let el=document.getElementById("fb-apiKey");
+      if(el){ Object.keys(c).forEach(k=>{ let inp=document.getElementById("fb-"+k); if(inp) inp.value=c[k]||""; }); }
+      else { setTimeout(tryFill,300); }
+    }
+    tryFill();
+    // Auto-reconnect silently if we have saved creds
+    setTimeout(()=>{ if(c.apiKey&&c.projectId) connectFirebase(true); },600);
+  }catch(e){}
+}
+
+window.parseAndFillFirebaseConfig = function(andConnect=false){
+  var raw = document.getElementById("fb-paste-config").value;
+  var result = document.getElementById("fb-paste-result");
+  if(!raw.trim()){ result.style.display="block"; result.style.background="rgba(220,50,50,.1)"; result.style.color="#ff7070"; result.style.border="1px solid rgba(220,50,50,.3)"; result.innerText="❌ Nothing pasted yet — paste your Firebase config above first."; return; }
+  
+  // Extract key-value pairs from the config using regex
+  var fields = {
+    apiKey: /apiKey\s*:\s*["'`]([^"'`]+)["'`]/,
+    authDomain: /authDomain\s*:\s*["'`]([^"'`]+)["'`]/,
+    projectId: /projectId\s*:\s*["'`]([^"'`]+)["'`]/,
+    storageBucket: /storageBucket\s*:\s*["'`]([^"'`]+)["'`]/,
+    messagingSenderId: /messagingSenderId\s*:\s*["'`]([^"'`]+)["'`]/,
+    appId: /appId\s*:\s*["'`]([^"'`]+)["'`]/,
+    measurementId: /measurementId\s*:\s*["'`]([^"'`]+)["'`]/
+  };
+  
+  var found = {}; var missing = [];
+  for(var key in fields){
+    var m = raw.match(fields[key]);
+    if(m){ found[key]=m[1]; } else if(key==="apiKey"||key==="projectId"||key==="authDomain"){ missing.push(key); }
+  }
+  
+  if(missing.length > 0){
+    result.style.display="block"; result.style.background="rgba(220,50,50,.1)"; result.style.color="#ff7070"; result.style.border="1px solid rgba(220,50,50,.3)";
+    result.innerText="⚠️ Could not find: "+missing.join(", ")+". Make sure you pasted the full firebaseConfig block.";
+    return;
+  }
+  
+  // Fill all input fields
+  var map = {apiKey:"fb-apiKey",authDomain:"fb-authDomain",projectId:"fb-projectId",storageBucket:"fb-storageBucket",messagingSenderId:"fb-messagingSenderId",appId:"fb-appId"};
+  for(var k in map){ var el=document.getElementById(map[k]); if(el&&found[k]) el.value=found[k]; }
+  
+  result.style.display="block"; result.style.background="rgba(61,220,132,.08)"; result.style.color="var(--ok)"; result.style.border="1px solid rgba(61,220,132,.25)";
+  result.innerText="✅ Filled: "+Object.keys(found).join(", ")+(andConnect?" — Connecting now...":"");
+  
+  if(andConnect){ setTimeout(()=>connectFirebase(), 400); }
+};
+
+window.connectFirebase=async function(silent=false){
+  let apiKey=document.getElementById("fb-apiKey")?.value?.trim();
+  let authDomain=document.getElementById("fb-authDomain")?.value?.trim();
+  let projectId=document.getElementById("fb-projectId")?.value?.trim();
+  let storageBucket=document.getElementById("fb-storageBucket")?.value?.trim();
+  let messagingSenderId=document.getElementById("fb-messagingSenderId")?.value?.trim();
+  let appId=document.getElementById("fb-appId")?.value?.trim();
+
+  if(!apiKey||!projectId){
+    if(!silent) showToast("❌ apiKey and projectId are required",true);
+    return;
+  }
+
+  let cfg={apiKey,authDomain,projectId,storageBucket,messagingSenderId,appId};
+
+  try{
+    // Safely delete existing app before re-initializing
+    if(firebaseApp){
+      try{ await firebaseApp.delete(); }catch(e){}
+      firebaseApp=null; firestore=null;
+    }
+    // Delete any lingering default app
+    try{
+      let existing=firebase.app();
+      if(existing) await existing.delete();
+    }catch(e){}
+
+    firebaseApp=firebase.initializeApp(cfg);
+    firestore=firebase.firestore();
+
+    // Test the connection with a real read
+    await firestore.collection("portfolio_data").doc("main").get();
+
+    // Save credentials for auto-reconnect on reload
+    localStorage.setItem("firebase_config", JSON.stringify(cfg));
+
+    let statusEl=document.getElementById("fbConnectionStatus");
+    if(statusEl){ statusEl.innerHTML="✅ Connected to Firebase"; statusEl.className="fb-status on"; }
+    let errBox=document.getElementById("fb-error-box"); if(errBox) errBox.style.display="none";
+    if(!silent) showToast("🔥 Firebase connected & ready!");
+
+  }catch(e){
+    firebaseApp=null; firestore=null;
+    let statusEl=document.getElementById("fbConnectionStatus");
+    if(statusEl){ statusEl.innerHTML="❌ Connection failed"; statusEl.className="fb-status off"; }
+    let errBox=document.getElementById("fb-error-box");
+    let msg=e.message||String(e);
+    // Give user-friendly hints for common errors
+    if(msg.includes("api-key")||msg.includes("API_KEY")||msg.includes("INVALID_API_KEY")) msg="❌ Invalid API key — double-check the apiKey field.\n\nRaw error: "+e.message;
+    else if(msg.includes("project")||msg.includes("PROJECT_NOT_FOUND")) msg="❌ Project not found — check your projectId.\n\nRaw error: "+e.message;
+    else if(msg.includes("network")||msg.includes("fetch")||msg.includes("ERR_")) msg="❌ Network error — check your internet connection.\n\nRaw error: "+e.message;
+    else if(msg.includes("permission")||msg.includes("PERMISSION_DENIED")) msg="❌ Firestore blocked — go to Firebase Console → Firestore → Rules and set to Test Mode.\n\nRaw error: "+e.message;
+    else msg="❌ "+e.message;
+    if(errBox){ errBox.style.display="block"; errBox.innerText=msg; }
+    if(!silent) showToast("❌ Firebase connection failed", true);
+    console.error("Firebase connect error:",e);
+  }
+};
+
+window.pushToFirebase=async function(){
+  if(!firestore){ showToast("❌ Connect Firebase first",true); return; }
+  try{
+    await firestore.collection("portfolio_data").doc("main").set({data:D,updatedAt:new Date().toISOString()});
+    showToast("✅ All data pushed to Firebase!");
+  }catch(e){
+    showToast("❌ Push failed: "+e.message,true);
+  }
+};
+
+window.pullFromFirebase=async function(){
+  if(!firestore){ showToast("❌ Connect Firebase first",true); return; }
+  try{
+    let doc=await firestore.collection("portfolio_data").doc("main").get();
+    if(doc.exists){
+      let remote=doc.data()?.data;
+      if(remote){
+        D={...DEFAULTS,...remote};
+        saveD(); renderAll(); loadAdminFields();
+        showToast("✅ Data pulled from Firebase!");
+      } else { showToast("⚠️ Firebase doc exists but has no data",true); }
+    } else {
+      showToast("⚠️ No data found in Firebase yet — Push first",true);
+    }
+  }catch(e){
+    showToast("❌ Pull failed: "+e.message,true);
+  }
+};
+
+// ---- Cursor light ----
+(function initCursor(){ let c=document.getElementById("cursorLight"); document.addEventListener("mousemove",function(e){ if(c._disabled) return; c.style.left=e.clientX+"px"; c.style.top=e.clientY+"px"; if(c.style.opacity==="0") c.style.opacity="0.85"; }); document.addEventListener("mouseleave",()=>{ c.style.opacity="0"; }); c.style.opacity="0"; c._disabled=false; })();
+
+// ---- Idle dot pulse (attracts attention when mouse is far or page idle) ----
+(function initIdleDotPulse(){
+  let dots=[], idleTimer=null, isIdle=false;
+  function getDots(){ return document.querySelectorAll('.tdot'); }
+  function startPulse(){ if(isIdle) return; isIdle=true; getDots().forEach(d=>d.classList.add('idle-pulse')); }
+  function stopPulse(){ if(!isIdle) return; isIdle=false; getDots().forEach(d=>d.classList.remove('idle-pulse')); }
+  function resetTimer(){ clearTimeout(idleTimer); stopPulse(); idleTimer=setTimeout(startPulse,3000); }
+  // Check if mouse is near any timeline section
+  document.addEventListener('mousemove',function(e){
+    let timelines=document.querySelectorAll('.timeline');
+    let near=false;
+    timelines.forEach(tl=>{
+      let r=tl.getBoundingClientRect();
+      let dx=Math.max(0, r.left-e.clientX, e.clientX-r.right);
+      let dy=Math.max(0, r.top-e.clientY, e.clientY-r.bottom);
+      if(Math.sqrt(dx*dx+dy*dy)<200) near=true;
+    });
+    if(near){ resetTimer(); } else { startPulse(); }
+  });
+  // Also pulse on scroll (sections come into view, draw attention)
+  let scrollCooldown;
+  window.addEventListener('scroll',function(){
+    clearTimeout(scrollCooldown);
+    startPulse();
+    scrollCooldown=setTimeout(()=>{ stopPulse(); resetTimer(); },1500);
+  });
+  // Start idle timer initially
+  idleTimer=setTimeout(startPulse,4000);
+})();
+
+// ---- Theme ----
+function applyTheme(name,manual){ let t={dark:{icon:"🌙",label:"Dark",cls:""},violet:{icon:"🌊",label:"Ocean Blue",cls:"violet"}}[name]; document.body.classList.remove("violet"); if(t.cls) document.body.classList.add(t.cls); document.getElementById("theme-icon").innerText=t.icon; document.getElementById("theme-label").innerText=t.label; if(manual) sessionStorage.setItem("pf_theme_override",name); let ind=document.getElementById("auto-ind"); if(ind) ind.textContent=!manual&&!sessionStorage.getItem("pf_theme_override")?"(auto)":"(manual)"; document.getElementById("theme-menu").classList.remove("open"); var c=document.getElementById("cursorLight"); if(document.body.classList.contains("violet")){ c.style.opacity="0"; c.style.pointerEvents="none"; c._disabled=true; } else { c._disabled=false; } applyColors(); }
+function getAutoTheme(){ return window.matchMedia("(prefers-color-scheme: light)").matches?"violet":"dark"; }
+function toggleThemeMenu(e){ e.stopPropagation(); document.getElementById("theme-menu").classList.toggle("open"); }
+document.addEventListener("click",()=>document.getElementById("theme-menu")?.classList.remove("open"));
+let ov=sessionStorage.getItem("pf_theme_override"); applyTheme(ov||getAutoTheme(),!!ov);
+
+// ---- Intersection Observer, year, admin UI, scroll, hamburger ----
+let obs=new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("vis"); }),{threshold:0.1});
+document.querySelectorAll(".rv").forEach(el=>obs.observe(el));
+document.getElementById("yr").innerText=new Date().getFullYear();
+window.openAdmin=function(){ document.getElementById("adm-overlay").style.display="block"; document.getElementById("adm-login").style.display="flex"; document.getElementById("adm-panel").style.display="none"; };
+window.closeAdmin=function(){ document.getElementById("adm-overlay").style.display="none"; };
+window.doLogin=function(){ let pwd=document.getElementById("pw-input").value; if(pwd===ADMIN_PASSWORD){ document.getElementById("adm-login").style.display="none"; document.getElementById("adm-panel").style.display="block"; loadAdminFields(); } else document.getElementById("login-err").innerText="Wrong password"; };
+window.doLogout=function(){ closeAdmin(); };
+window.swTab=function(name,btn){ document.querySelectorAll(".adm-page").forEach(p=>p.classList.remove("on")); document.querySelectorAll(".adm-tab").forEach(t=>t.classList.remove("on")); document.getElementById("adm-"+name).classList.add("on"); btn.classList.add("on"); };
+window.togglePwVis=function(id,btn){ let inp=document.getElementById(id); if(inp.type==="password"){ inp.type="text"; btn.textContent="🙈"; }else{ inp.type="password"; btn.textContent="👁"; } };
+window.revealNav=function(){ document.getElementById("nav").classList.remove("nav-hidden"); document.getElementById("nav-peek").classList.remove("show"); };
+window.addEventListener("scroll",function(){ let sy=window.scrollY; let n=document.getElementById("nav"); let pk=document.getElementById("nav-peek"); if(sy>80){ if(sy>window._prevY+8){ n.classList.add("nav-hidden"); if(pk)pk.classList.add("show"); } else if(sy<window._prevY-8){ revealNav(); } } else revealNav(); window._prevY=sy; n.classList.toggle("sc",sy>55); });
+// Hover top edge to reveal nav without clicking
+(function(){ var zone=document.getElementById("nav-hover-zone"); if(!zone) return; zone.addEventListener("mouseenter",function(){ var n=document.getElementById("nav"); if(n.classList.contains("nav-hidden")) revealNav(); }); })();
+document.getElementById("hbtn").onclick=()=>{ document.getElementById("navl").classList.toggle("open"); document.getElementById("hbtn").classList.toggle("open"); document.getElementById("navl-backdrop").classList.toggle("open"); };
+document.getElementById("navl-backdrop").onclick=function(){ document.getElementById("navl").classList.remove("open"); document.getElementById("hbtn").classList.remove("open"); this.classList.remove("open"); };
+function loadAdminFields(){
+  document.getElementById("a-first-name").value=D.firstName; document.getElementById("a-last-name").value=D.lastNameAccent; document.getElementById("a-logo-text").value=D.logoText; document.getElementById("a-scroll-hint").value=D.scrollHint; document.getElementById("a-eyebrow").value=D.eyebrow; document.getElementById("a-tagline").value=D.tagline;
+  document.getElementById("a-bio1").value=D.bio1; document.getElementById("a-bio2").value=D.bio2; document.getElementById("a-contact-desc").value=D.contactDesc; document.getElementById("a-form-action").value=D.formAction||"";
+  document.getElementById("f-name").value=D.footerName; document.getElementById("f-copy").value=D.footerCopy; document.getElementById("a-photo-placeholder").value=D.photoPlaceholder;
+  document.getElementById("login-hint-text").value=D.loginHint||"";
+  renderHeroBtnsList(); renderExpList(); renderEduList(); renderFinanceList(); renderTraitsList(); renderToolsList(); renderLawList(); renderCertsList(); renderContactLinksList(); renderSectionsList(); loadHeadingsFields(); loadColorsFields(); loadInlineColorFields();
+}
+function loadHeadingsFields(){ let sh=D.sectionHeadings; document.getElementById("h-about-label").value=sh.about.label; document.getElementById("h-about-title").value=sh.about.title; document.getElementById("h-about-accent").value=sh.about.accent; document.getElementById("h-exp-label").value=sh.experience.label; document.getElementById("h-exp-title").value=sh.experience.title; document.getElementById("h-exp-accent").value=sh.experience.accent; document.getElementById("h-skills-label").value=sh.skills.label; document.getElementById("h-skills-title").value=sh.skills.title; document.getElementById("h-skills-accent").value=sh.skills.accent; document.getElementById("h-certs-label").value=sh.certifications.label; document.getElementById("h-certs-title").value=sh.certifications.title; document.getElementById("h-certs-accent").value=sh.certifications.accent; document.getElementById("h-edu-label").value=sh.education.label; document.getElementById("h-edu-title").value=sh.education.title; document.getElementById("h-edu-accent").value=sh.education.accent; document.getElementById("h-contact-label").value=sh.contact.label; document.getElementById("h-contact-title").value=sh.contact.title; document.getElementById("h-contact-accent").value=sh.contact.accent; }
+function loadColorsFields(){ renderColorsAdmin(); }
+window.submitForm = async function(e){ e.preventDefault(); let note=document.getElementById("fnote"); if(!D.formAction){ note.innerHTML="⚠️ Set Form Action URL in Admin → General"; note.style.color="var(--err)"; return; } let name=document.getElementById("cf-name").value, email=document.getElementById("cf-email").value, msg=document.getElementById("cf-message").value, btn=document.getElementById("submit-btn"); btn.disabled=true; btn.innerHTML="Sending..."; try{ let res=await fetch(D.formAction,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name,email,message:msg})}); if(res.ok){ note.innerHTML="✅ Sent!"; note.style.color="var(--ok)"; document.getElementById("contact-form").reset(); } else throw new Error(); } catch(err){ note.innerHTML="❌ Failed. Check endpoint."; note.style.color="var(--err)"; } finally{ btn.disabled=false; btn.innerHTML="Send Message"; setTimeout(()=>{ note.innerHTML=""; },4000); } };
+loadD(); renderAll(); loadFirebaseConfigFromStorage();
+
+// ---- End-of-page stretch effect ----
+let mainEl=document.getElementById("mainContent");
+let atTop=true, atBottom=false;
+window.addEventListener("scroll",function(){ let st=window.scrollY; let sh=document.documentElement.scrollHeight-window.innerHeight; let topNow=st<=10; let bottomNow=st>=sh-10; if(topNow&&!atTop){ mainEl.style.transform="scale(1.01)"; setTimeout(()=>mainEl.style.transform="",200); } if(bottomNow&&!atBottom){ mainEl.style.transform="scale(1.01)"; setTimeout(()=>mainEl.style.transform="",200); } atTop=topNow; atBottom=bottomNow; });
+
+// ---- Hero canvas animation ----
+(function(){ var c=document.getElementById("hero-canvas"); if(!c)return; var ctx=c.getContext("2d"),W,H,t=0; function resize(){W=c.width=c.offsetWidth||innerWidth;H=c.height=c.offsetHeight||innerHeight;} resize(); window.addEventListener("resize",resize); var blobs=[{x:.15,y:1.1,r:.55,sp:.000035,ph:0,ox:.04},{x:.75,y:1.3,r:.48,sp:.000025,ph:1.57,ox:.03},{x:.45,y:1.5,r:.52,sp:.000030,ph:3.14,ox:.03},{x:.88,y:1.7,r:.38,sp:.000040,ph:.8,ox:.05},{x:.28,y:1.9,r:.42,sp:.000028,ph:2.2,ox:.04}]; blobs.forEach(b=>b._y=b.y); function draw(){ ctx.clearRect(0,0,W,H); t+=.0006; blobs.forEach(b=>{ b._y-=b.sp; if(b._y<-0.25) b._y=1.15+Math.random()*.4; let cx=(b.x+Math.sin(t*40+b.ph)*b.ox)*W, cy=b._y*H, r=b.r*Math.min(W,H)*.75; let prog=1-(b._y+.25)/1.4, alpha=Math.max(0,Math.min(1,prog<.15?prog/.15:prog>.8?(1-prog)/.2:1)); let g=ctx.createRadialGradient(cx,cy,0,cx,cy,r); let isLight=document.body.classList.contains("violet"); if(isLight){ g.addColorStop(0,`rgba(3,105,161,${alpha*.11})`); g.addColorStop(1,`rgba(3,105,161,0)`); } else { g.addColorStop(0,`rgba(77,166,255,${alpha*.1})`); g.addColorStop(1,`rgba(77,166,255,0)`); } ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.fillStyle=g; ctx.fill(); }); requestAnimationFrame(draw); } draw(); })();
+</script>
+</body>
+</html>
